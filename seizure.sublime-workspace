@@ -1,0 +1,1107 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"chn",
+				"channel_file"
+			],
+			[
+				"EEG",
+				"EEGDataMIT"
+			],
+			[
+				"ica",
+				"ica_mat"
+			],
+			[
+				"cur",
+				"cur_vec"
+			],
+			[
+				"window",
+				"window_length"
+			],
+			[
+				"end",
+				"end_time"
+			],
+			[
+				"pca",
+				"pca_coordinates"
+			],
+			[
+				"data",
+				"data_mat"
+			],
+			[
+				"raw",
+				"raw_mat"
+			],
+			[
+				"win",
+				"window_length"
+			],
+			[
+				"wind",
+				"window_vec"
+			],
+			[
+				"Componet",
+				"component"
+			],
+			[
+				"num",
+				"num_trials"
+			],
+			[
+				"epo",
+				"epoch_len"
+			],
+			[
+				"l1",
+				"l1opt_path"
+			],
+			[
+				"band",
+				"band_cutoffs"
+			],
+			[
+				"c",
+				"channel_file"
+			],
+			[
+				"channel",
+				"channel_file"
+			],
+			[
+				"chan",
+				"channel_std_path"
+			],
+			[
+				"file",
+				"file_path"
+			],
+			[
+				"y",
+				"y_test	statement"
+			],
+			[
+				"pl",
+				"plot_confusion_matrix	function"
+			],
+			[
+				"for",
+				"format	function"
+			],
+			[
+				"y_",
+				"y_pred"
+			],
+			[
+				"bes",
+				"best_val	statement"
+			],
+			[
+				"X",
+				"X_train	statement"
+			],
+			[
+				"lam",
+				"lambda	keyword"
+			],
+			[
+				"be",
+				"best_loss	statement"
+			],
+			[
+				"best",
+				"best_softmax"
+			],
+			[
+				"X_",
+				"X_val"
+			],
+			[
+				"lo",
+				"loss"
+			],
+			[
+				"best_",
+				"best_loss"
+			],
+			[
+				"re",
+				"reg	param"
+			],
+			[
+				"ba",
+				"bactch_size	statement"
+			],
+			[
+				"batch",
+				"bactch_size"
+			],
+			[
+				"iter",
+				"iteration	statement"
+			],
+			[
+				"learn",
+				"learning_rate	forstmt"
+			],
+			[
+				"lea",
+				"learning_rate	param"
+			],
+			[
+				"the",
+				"theta	statement"
+			],
+			[
+				"so",
+				"SoftmaxClassifier	class"
+			],
+			[
+				"learning",
+				"learning_rates	statement"
+			],
+			[
+				"log",
+				"logsumexp	import"
+			],
+			[
+				"mi",
+				"misc	module"
+			],
+			[
+				"reg",
+				"reg_term	statement"
+			],
+			[
+				"np",
+				"np	module"
+			],
+			[
+				"sta",
+				"stable	function"
+			],
+			[
+				"ve",
+				"vectorized"
+			],
+			[
+				"ind",
+				"indicator"
+			],
+			[
+				"sum",
+				"sum_term	statement"
+			],
+			[
+				"theta",
+				"theta_opt	statement"
+			],
+			[
+				"av",
+				"avg_accu	statement"
+			],
+			[
+				"tes",
+				"test_err	statement"
+			],
+			[
+				"plot",
+				"plot_valid_curve	function"
+			],
+			[
+				"Bos",
+				"BostonHousing	class"
+			],
+			[
+				"acc",
+				"acc_val	statement"
+			],
+			[
+				"err",
+				"error_train	statement"
+			],
+			[
+				"error",
+				"error_train	statement"
+			],
+			[
+				"O",
+				"object	class"
+			],
+			[
+				"The",
+				"Theta"
+			],
+			[
+				"pred",
+				"pred_y"
+			],
+			[
+				"pre",
+				"pred_y"
+			],
+			[
+				"sigma",
+				"sigma2"
+			],
+			[
+				"set",
+				"setwd	{base}"
+			],
+			[
+				"ma",
+				"max_iters"
+			],
+			[
+				"id",
+				"id_mat"
+			],
+			[
+				"cu",
+				"cur_dist"
+			],
+			[
+				"cent",
+				"centroids"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"wor",
+				"word_indices"
+			],
+			[
+				"sim",
+				"simga"
+			],
+			[
+				"le",
+				"lambda_vec"
+			],
+			[
+				"va",
+				"validation_error"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"tr",
+				"train_error"
+			],
+			[
+				"lin",
+				"linearRegCostFunction"
+			],
+			[
+				"z",
+				"zeros"
+			],
+			[
+				"fil",
+				"fil_mat"
+			],
+			[
+				"th",
+				"theta_mat"
+			],
+			[
+				"Th",
+				"Theta1"
+			],
+			[
+				"de",
+				"del_2"
+			],
+			[
+				"a",
+				"a2"
+			],
+			[
+				"si",
+				"sigmoid"
+			],
+			[
+				"del",
+				"del_3"
+			],
+			[
+				"L",
+				"L_in"
+			],
+			[
+				"all",
+				"all_theta"
+			],
+			[
+				"com",
+				"compute_cur_theta"
+			],
+			[
+				"al",
+				"all_theta"
+			],
+			[
+				"ld",
+				"ldl_sex_age.mlr"
+			],
+			[
+				"dev",
+				"dev.copy"
+			],
+			[
+				"ldl",
+				"ldl_sex.slr"
+			],
+			[
+				"apo",
+				"apoe1"
+			],
+			[
+				"gen",
+				"geno_levels"
+			],
+			[
+				"df",
+				"df_3"
+			],
+			[
+				"tc",
+				"tc.slr"
+			],
+			[
+				"chi",
+				"child_tc"
+			],
+			[
+				"par",
+				"par_tc"
+			],
+			[
+				"val",
+				"value.MLR"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"cor",
+				"corner"
+			],
+			[
+				"low",
+				"low_income"
+			],
+			[
+				"repeat",
+				"repeatschool"
+			],
+			[
+				"Y",
+				"year"
+			],
+			[
+				"fac",
+				"factor"
+			],
+			[
+				"tar",
+				"tarA	statement"
+			],
+			[
+				"mem",
+				"memoize	function"
+			],
+			[
+				"std",
+				"stdrs"
+			],
+			[
+				"coo",
+				"cookdist"
+			],
+			[
+				"ha",
+				"hat"
+			],
+			[
+				"lm.",
+				"lm.influence"
+			],
+			[
+				"res",
+				"resid.sr"
+			],
+			[
+				"ks",
+				"ks.test"
+			],
+			[
+				"resi",
+				"resid.sr"
+			],
+			[
+				"my",
+				"mytitle"
+			],
+			[
+				"sp",
+				"sprintf"
+			],
+			[
+				"pol",
+				"polygon"
+			],
+			[
+				"plo",
+				"plot"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"get",
+				"get_spent	function"
+			],
+			[
+				"bu",
+				"buget_set"
+			],
+			[
+				"tb",
+				"table	Tag"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"padd",
+				"padding-top"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "classdef EEGDataMIT < EEGDataInterface\n% special read in file for MIT_CHB data set\n    properties\n    end\n\n    methods\n        function obj = EEGDataMIT(obj) \n            obj.sampling_rate = 256;\n        end\n\n        function obj = load_raw(obj, readings_file)\n    end\nend",
+			"file": "EEGDataMIT.m",
+			"file_size": 219,
+			"file_write_time": 131086142410000000,
+			"settings":
+			{
+				"buffer_size": 272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "classdef EEGDataInterface < handle\n% this is an interface for eegdata\n% it handles I/O and data extraction using time as coordinates\n% it is integrated with eeglab, provides raw data plot functionality, \n% as well as ica source separation (source component plot)\n\n    properties\n        curEEG\n        sampling_rate = 128\n        dataset_name % all data stored will be in the ./<dataset_name>Data/<dataset_name>_ext\n        raw_data = 1\n        ica_data\n        ica_weights\n        ica_inv\n        chanlocs\n        cur_component_index=1;\n        start_loc\n        end_loc\n        raw_vec\n        ica_vec\n        window_raw_vec\n        window_ica_vec\n        begin_time\n        interval_length\n        xvec\n        data_path\n\n    end\n\n    methods\n    %% all load functionalities\n        function obj = EEGDataInterface(obj)       \n            % initialize an empty object, just set the dataset_name\n            % initialize eeglab\n            parpath = fileparts(pwd);\n            addpath([parpath '/eeglab']);\n            eeglab;\n        end\n        \n \n       function obj = set_name(obj, dataset_name)\n            obj.dataset_name = dataset_name;\n            mkdir([dataset_name 'Data']);\n            obj.data_path = [pwd '/' dataset_name 'Data'];\n        end\n\n        function obj = load_raw(obj, readings_file)\n            channel_file = [pwd '/' 'emotive_channel_info.ced']\n            obj.curEEG = LoadEEGData(readings_file, obj.dataset_name, channel_file);\n            obj = obj.extract_EEG_data();\n        end\n\n        function obj = pop_load_set(obj)\n            obj.curEEG = pop_loadset();\n            obj = obj.extract_EEG_data();\n        end\n\n        function obj = load_set(obj, path_to_set)\n            obj.curEEG = pop_loadset(path_to_set);\n            obj = obj.extract_EEG_data();\n        end\n\n        function obj = extract_EEG_data(obj)\n            % extract values from EEG object for easier access\n            obj.ica_weights = obj.curEEG.icaweights * obj.curEEG.icasphere;\n            obj.ica_inv = obj.curEEG.icawinv;\n            obj.raw_data = obj.curEEG.data;\n            obj.ica_data = obj.ica_weights * obj.raw_data;\n            obj.chanlocs = obj.curEEG.chanlocs;\n            obj.raw_vec = obj.raw_data(obj.cur_component_index, :);\n            obj.ica_vec = obj.ica_data(obj.cur_component_index, :);\n        end\n\n            %% helper functions\n        function start_loc = get_time_loc(obj, time_in_sec) \n            % get the col_number of the first frame just after the time  \n            start_loc = round(obj.sampling_rate * time_in_sec) + 1;\n        end\n\n        function [start_loc, end_loc] = get_interval_loc(obj, begin_time, interval)\n            % inclusive of end point\n            start_loc = round(obj.sampling_rate * begin_time) + 1;\n            end_loc = round(obj.sampling_rate * (begin_time + interval));\n        end\n\n        function duration = get_total_length(obj)\n            duration = obj.curEEG.xmax;\n        end\n\n        function [raw_vec, ica_vec] = get_component(obj, index)\n            raw_vec = obj.data(index, :);\n            ica_vec = obj.data(index, :);\n        end\n\n\n    end\nend\n",
+			"file": "EEGDataInterface.m",
+			"file_size": 3090,
+			"file_write_time": 131086638150000000,
+			"settings":
+			{
+				"buffer_size": 3140,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "emotive_channel_info.ced",
+			"settings":
+			{
+				"buffer_size": 686,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeX-Plus/support/LaTex-Plus.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeX-Plus/support/LaTex-Plus.sublime-build",
+					"Force"
+				]
+			],
+			[
+				"Packages/LaTeX-Plus/support/LaTex-Plus.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"build",
+				"Build With: Python"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"Package Control: I",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 327.0,
+		"history":
+		[
+			"python -u \"/Users/Zhe/Google Drive/data analyze/Berkeley.py\"",
+			"python -u py_compile \"/Users/Zhe/Google Drive/data analyze/Berkeley.py\"",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/zz22/seizure/myeegcode"
+	],
+	"file_history":
+	[
+		"/Users/Zhe/Documents/EEGDataMIT.m",
+		"/Users/Zhe/Documents/EEGDataInterface.m",
+		"/Volumes/zz22/seizure/myeegcode/MyEEG.m",
+		"/Volumes/zz22/seizure/myeegcode/gen_windowed_matrix.m",
+		"/Volumes/zz22/seizure/myeegcode/MyFigure.m",
+		"/Volumes/zz22/seizure/myeegcode/JuarezDriver.m",
+		"/Volumes/zz22/seizure/myeegcode/graphs/sum1.tex",
+		"/Volumes/zz22/seizure/myeegcode/graphs/summary.tex",
+		"/Volumes/zz22/seizure/myeegcode/plot_cwt.m",
+		"/Volumes/zz22/seizure/myeegcode/myqprops.m",
+		"/Volumes/zz22/seizure/ndtools/ndtools/mkwobj.m",
+		"/Volumes/zz22/seizure/myeegcode/compsensing.m",
+		"/Volumes/zz22/seizure/myeegcode/my_compression.m",
+		"/Volumes/zz22/seizure/l1magic/my_compression.m",
+		"/Volumes/zz22/seizure/writeup/LoadEGG_explained.tex",
+		"/Users/Zhe/Documents/MATLAB/MAT_LIB/myeegcode/LoadEEGData.m",
+		"/Users/Zhe/Documents/MATLAB/MAT_LIB/myeegcode/JuarezDriver.m",
+		"/Users/Zhe/Documents/MATLAB/MAT_LIB/l1magic/l1dantzig_example.m",
+		"/Users/Zhe/Documents/MATLAB/MAT_LIB/l1magic/my_compression.m",
+		"/Users/Zhe/Documents/MATLAB/MAT_LIB/eeglab/JuarezDriver.m",
+		"/Users/Zhe/Documents/MATLAB/MAT_LIB/eeglab/LoadEEGData.m",
+		"/Users/Zhe/Documents/Comp_540/hw3/softmax_music_joe.py",
+		"/Users/Zhe/Documents/Comp_540/hw3/softmax.py",
+		"/Users/Zhe/Documents/Comp_540/hw3/myconfusion.py",
+		"/Users/Zhe/Documents/Comp_540/hw3/softmax_music.py",
+		"/Users/Zhe/Documents/Comp_540/hw3/softmax_hw.py",
+		"/Users/Zhe/Documents/Comp_540/hw3/utils.py",
+		"/Users/Zhe/Documents/Comp_540/hw3/softmax_joe.py",
+		"/Users/Zhe/Documents/Comp_540/hw2/part1/utils.py",
+		"/Users/Zhe/Documents/Comp_540/hw2/writeup.tex",
+		"/Users/Zhe/Documents/Comp_540/hw2/part1/ex1_spam.py",
+		"/Users/Zhe/Documents/Comp_540/hw2/part2/one_vs_all.py",
+		"/Users/Zhe/Documents/Comp_540/hw2/part2/ex_music.py",
+		"/Users/Zhe/Documents/Comp_540/hw2/part_C_D_write_up.tex",
+		"/Users/Zhe/Documents/Comp_540/hw2/part1/ex1_reg.py",
+		"/Users/Zhe/Documents/Comp_540/hw2/part1/test_sklearn_l2.py",
+		"/Users/Zhe/Documents/Comp_540/hw2/part1/for_fun.py",
+		"/Users/Zhe/Documents/Comp_540/hw1/part3/_fig_validation_curve_order_1.pdf",
+		"/Users/Zhe/Documents/Comp_540/hw1/part2/utils.py",
+		"/Users/Zhe/Documents/Comp_540/hw1/part3/ex3.py",
+		"/Users/Zhe/Documents/Comp_540/hw1/part3/ex3b.py",
+		"/Users/Zhe/Documents/Comp_540/hw1/hw1_writeup.tex",
+		"/Users/Zhe/Documents/stanford_machine_learning/Titanic/titanic.R",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex7/ex7/projectData.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex7/ex7/recoverData.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex7/ex7/pca.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex7/ex7/findClosestCentroids.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex7/ex7/computeCentroids.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex7/ex7/kMeansInitCentroids.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex7/ex7/ex7.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex7/ex7/runkMeans.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex5/ex5/linearRegCostFunction.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex5/ex5/learningCurve.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex5/ex5/polyFeatures.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex5/ex5/validationCurve.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex6/ex6/gaussianKernel.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex6/ex6/svmTrain.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex6/ex6/dataset3Params.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex6/ex6/processEmail.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex6/ex6/emailFeatures.m",
+		"/Users/Zhe/Documents/writing/Asia_422/Final.txt",
+		"/Users/Zhe/Documents/writing/Asia_422/midterm.txt",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex4/ex4/randInitializeWeights.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex4/ex4/sigmoidGradient.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex4/ex4/displayData.m",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex4/ex4/nnCostFunction.m",
+		"/Users/Zhe/Dropbox/Japan Visa/flight_iternary.tex",
+		"/Users/Zhe/Dropbox/Japan Visa/Flight Iternary",
+		"/Users/Zhe/Dropbox/Japan Visa/Travel_plan.tex",
+		"/Users/Zhe/Dropbox/Japan Visa/Chase Online - Printer Friendly.pdf",
+		"/Users/Zhe/Documents/stanford_machine_learning/machine-learning-ex3/ex3/oneVsAll.m",
+		"/Users/Zhe/Documents/STAT/stat_410/hw5/prob_2.r",
+		"/Users/Zhe/Documents/STAT/stat_410/hw5/prob_1.r",
+		"/Users/Zhe/Documents/STAT/stat_410/hw5/writeup.tex",
+		"/Users/Zhe/Documents/STAT/stat_410/hw2/hw2.r",
+		"/Users/Zhe/Documents/STAT/stat_410/hw4/prob4.r",
+		"/Users/Zhe/Documents/STAT/stat_410/hw4/prob5.r",
+		"/Users/Zhe/Documents/STAT/stat_410/hw4/write_up.tex",
+		"/Users/Zhe/Documents/STAT/stat_410/hw3/writeup.tex",
+		"/Users/Zhe/Downloads/stat 410/hw3/prob_1.r",
+		"/Users/Zhe/Desktop/memo_demo.py",
+		"/Users/Zhe/Downloads/stat 410/hw3/prob_2.r",
+		"/Users/Zhe/Downloads/stat 410/hw3/writeup.tex",
+		"/Users/Zhe/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/Zhe/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/Zhe/Downloads/stat 410/hw2/hw2.py",
+		"/Users/Zhe/Documents/django_projects/try_html/Final Code/chapter-15/example.html",
+		"/Users/Zhe/Documents/django_projects/templates/comments/preview.html",
+		"/Users/Zhe/Desktop/untitled.html",
+		"/Users/Zhe/Documents/django_projects/templates/css/table.css",
+		"/Users/Zhe/Documents/django_projects/templates/css/coltrane.css",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/base.html",
+		"/Users/Zhe/Documents/django_projects/myapps/sodagreen/views.py",
+		"/Users/Zhe/Desktop/try_wsgi.py",
+		"/Users/Zhe/Documents/django_projects/templates/css/typography.css",
+		"/Users/Zhe/Documents/django_projects/templates/sodagreen/base.html",
+		"/Users/Zhe/Documents/django_projects/cms/cms/wwww.py",
+		"/Users/Zhe/Documents/django_projects/templates/css/form.css",
+		"/Users/Zhe/Documents/django_projects/cms/cms/settings.py",
+		"/Users/Zhe/Documents/django_projects/myapps/sodagreen/models.py",
+		"/Users/Zhe/Documents/django_projects/templates/sodagreen/category_index.html",
+		"/Users/Zhe/Documents/django_projects/myapps/sodagreen/url1s.py",
+		"/Users/Zhe/Documents/django_projects/cms/cms/urls.py",
+		"/Users/Zhe/Documents/django_projects/myapps/coltrane/views.py",
+		"/Users/Zhe/Documents/django_projects/myapps/coltrane/try_syntax.py",
+		"/Users/Zhe/Documents/django_projects/myapps/coltrane/comments_spam.py",
+		"/Users/Zhe/Documents/django_projects/templates/comments/list.html",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/link_detail.html",
+		"/Users/Zhe/Documents/django_projects/myapps/coltrane/models.py",
+		"/Users/Zhe/Documents/django_projects/myapps/coltrane/admin.py",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/entry_detail.html",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/entry_index.html",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/link_list.html",
+		"/Users/Zhe/Documents/django_projects/myapps/sodagreen/admin.py",
+		"/Users/Zhe/Documents/django_projects/myapps/coltrane/templatetags/coltrane_tags.py",
+		"/Users/Zhe/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/tag_detail.html",
+		"/Users/Zhe/Documents/django_projects/myapps/coltrane/urls.py",
+		"/Users/Zhe/Documents/django_projects/templates/list.html",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/entry_archive_year.html",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/entry_base.html",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/url_list.html",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/tag_index.html",
+		"/Users/Zhe/Documents/django_projects/cms/cms/views.py",
+		"/Users/Zhe/Documents/django_projects/templates/fun/tryhtml.html",
+		"/Users/Zhe/Documents/django_projects/templates/coltrane/category_detail.html",
+		"/Users/Zhe/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/Zhe/Library/Application Support/Sublime Text 3/Packages/User/Python (Django).sublime-settings"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\\label",
+			"change",
+			"1",
+			"'/graphs/'",
+			"32",
+			"'C:\\\\ailab\\\\Sam\\\\Juarez Data\\\\'",
+			"iris.",
+			"SoftmaxClass",
+			"ldl",
+			"0.6",
+			"ldl",
+			"tc",
+			"75",
+			"\"",
+			"'",
+			"indent",
+			"entry",
+			"textarea",
+			"timeformate",
+			"save_pr",
+			"self.courses",
+			"time",
+			"cumcompleted",
+			"resume",
+			"start",
+			"select_all",
+			"pypad",
+			"icons",
+			"icon",
+			"line",
+			"end",
+			"aboutmenu",
+			"themchoice",
+			"right",
+			"NO",
+			"YES",
+			"')\n",
+			"build",
+			"},\n",
+			"build",
+			"lock_comp",
+			"n",
+			"Texas",
+			"Mary",
+			"Cin",
+			"print",
+			"aaa",
+			"length",
+			"test100MaxFactorize0(FactorizationTester)",
+			"long",
+			"PrintStream",
+			"printStrean",
+			"'",
+			"T",
+			"F",
+			"True-",
+			"zhang",
+			"Guangzho",
+			"GaoYueMing",
+			"codecs",
+			"Yue",
+			"pritn",
+			"*\n",
+			"info",
+			"()",
+			"print",
+			")\n",
+			"print",
+			"\"E\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "EEGDataMIT.m",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								260,
+								260
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Matlab/Matlab.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "EEGDataInterface.m",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1088,
+								1088
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Matlab/Matlab.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 34.0,
+						"translation.y": 231.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "emotive_channel_info.ced",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 686,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 217.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "seizure.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/pyGUI/manager/testDB.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/Volumes/zz22/seizure/seizure.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 173.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

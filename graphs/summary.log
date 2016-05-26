@@ -1,0 +1,408 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  29 MAR 2016 21:15
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**summary.tex
+(./summary.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/paper/paper.cls
+Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
+\hours=\count79
+\minutes=\count80
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\beforetitlespace=\skip41
+\c@part=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\exampleindent=\skip42
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip43
+\belowcaptionskip=\skip44
+\bibindent=\dimen102
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count90
+\Gm@cntv=\count91
+\c@Gm@tempcnt=\count92
+\Gm@bindingoffset=\dimen105
+\Gm@wd@mp=\dimen106
+\Gm@odd@mp=\dimen107
+\Gm@even@mp=\dimen108
+\Gm@layoutwidth=\dimen109
+\Gm@layoutheight=\dimen110
+\Gm@layouthoffset=\dimen111
+\Gm@layoutvoffset=\dimen112
+\Gm@dimlist=\toks15
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip45
+\subfigcapskip=\skip46
+\subfigcaptopadj=\dimen113
+\subfigbottomskip=\skip47
+\subfigcapmargin=\dimen114
+\subfiglabelskip=\skip48
+\c@subfigure=\count93
+\c@lofdepth=\count94
+\c@subtable=\count95
+\c@lotdepth=\count96
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2013/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip49
+\subfig@bottom=\skip50
+)
+
+LaTeX Warning: Unused global option(s):
+    [9pts].
+
+(./summary.aux
+
+LaTeX Warning: Label `fig:figure' multiply defined.
+
+)
+\openout1 = `summary.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count97
+\scratchdimen=\dimen115
+\scratchbox=\box26
+\nofMPsegments=\count98
+\nofMParguments=\count99
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count100
+\MPscratchDim=\dimen116
+\MPnumerator=\count101
+\makeMPintoPDFobject=\count102
+\everyMPtoPDFconversion=\toks17
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+)) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(57.81621pt, 498.66258pt, 57.81621pt)
+* v-part:(T,H,B)=(57.81621pt, 679.33757pt, 57.81621pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=498.66258pt
+* \textheight=679.33757pt
+* \oddsidemargin=-14.45378pt
+* \evensidemargin=-14.45378pt
+* \topmargin=-51.45378pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<1energy_band.pdf, id=1, 614.295pt x 794.97pt>
+File: 1energy_band.pdf Graphic file (type pdf)
+<use 1energy_band.pdf>
+Package pdftex.def Info: 1energy_band.pdf used on input line 16.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<comp_sen_1.pdf, id=2, 614.295pt x 794.97pt>
+File: comp_sen_1.pdf Graphic file (type pdf)
+<use comp_sen_1.pdf>
+Package pdftex.def Info: comp_sen_1.pdf used on input line 20.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<ica_1.png, id=3, 578.16pt x 433.62pt>
+File: ica_1.png Graphic file (type png)
+<use ica_1.png>
+Package pdftex.def Info: ica_1.png used on input line 23.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (11.65358pt too wide) in paragraph at lines 16--24
+[][]  []
+ []
+
+<1cwt.png, id=4, 578.16pt x 433.62pt>
+File: 1cwt.png Graphic file (type png)
+<use 1cwt.png>
+Package pdftex.def Info: 1cwt.png used on input line 31.
+(pdftex.def)             Requested size: 498.66258pt x 373.99765pt.
+<2energy_band.pdf, id=5, 614.295pt x 794.97pt>
+File: 2energy_band.pdf Graphic file (type pdf)
+<use 2energy_band.pdf>
+Package pdftex.def Info: 2energy_band.pdf used on input line 39.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<comp_sen_2.pdf, id=6, 614.295pt x 794.97pt>
+File: comp_sen_2.pdf Graphic file (type pdf)
+<use comp_sen_2.pdf>
+Package pdftex.def Info: comp_sen_2.pdf used on input line 43.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<ica_2.png, id=7, 578.16pt x 433.62pt>
+File: ica_2.png Graphic file (type png)
+<use ica_2.png>
+Package pdftex.def Info: ica_2.png used on input line 46.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (11.65358pt too wide) in paragraph at lines 39--47
+[][]  []
+ []
+
+<2cwt.png, id=8, 578.16pt x 433.62pt>
+File: 2cwt.png Graphic file (type png)
+<use 2cwt.png>
+Package pdftex.def Info: 2cwt.png used on input line 54.
+(pdftex.def)             Requested size: 498.66258pt x 373.99765pt.
+<3energy_band.pdf, id=9, 614.295pt x 794.97pt>
+File: 3energy_band.pdf Graphic file (type pdf)
+<use 3energy_band.pdf>
+Package pdftex.def Info: 3energy_band.pdf used on input line 62.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<comp_sen_3.pdf, id=10, 614.295pt x 794.97pt>
+File: comp_sen_3.pdf Graphic file (type pdf)
+<use comp_sen_3.pdf>
+Package pdftex.def Info: comp_sen_3.pdf used on input line 66.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<ica_3.png, id=11, 578.16pt x 433.62pt>
+File: ica_3.png Graphic file (type png)
+<use ica_3.png>
+Package pdftex.def Info: ica_3.png used on input line 69.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (11.65358pt too wide) in paragraph at lines 62--70
+[][]  []
+ []
+
+<3cwt.png, id=12, 578.16pt x 433.62pt>
+File: 3cwt.png Graphic file (type png)
+<use 3cwt.png>
+Package pdftex.def Info: 3cwt.png used on input line 77.
+(pdftex.def)             Requested size: 498.66258pt x 373.99765pt.
+<4energy_band.pdf, id=13, 614.295pt x 794.97pt>
+File: 4energy_band.pdf Graphic file (type pdf)
+<use 4energy_band.pdf>
+Package pdftex.def Info: 4energy_band.pdf used on input line 85.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<comp_sen_4.pdf, id=14, 614.295pt x 794.97pt>
+File: comp_sen_4.pdf Graphic file (type pdf)
+<use comp_sen_4.pdf>
+Package pdftex.def Info: comp_sen_4.pdf used on input line 89.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<ica_4.png, id=15, 578.16pt x 433.62pt>
+File: ica_4.png Graphic file (type png)
+<use ica_4.png>
+Package pdftex.def Info: ica_4.png used on input line 92.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (11.65358pt too wide) in paragraph at lines 85--93
+[][]  []
+ []
+
+<4cwt.png, id=16, 578.16pt x 433.62pt>
+File: 4cwt.png Graphic file (type png)
+<use 4cwt.png>
+Package pdftex.def Info: 4cwt.png used on input line 100.
+(pdftex.def)             Requested size: 498.66258pt x 373.99765pt.
+<5energy_band.pdf, id=17, 614.295pt x 794.97pt>
+File: 5energy_band.pdf Graphic file (type pdf)
+<use 5energy_band.pdf>
+Package pdftex.def Info: 5energy_band.pdf used on input line 107.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<comp_sen_5.pdf, id=18, 614.295pt x 794.97pt>
+File: comp_sen_5.pdf Graphic file (type pdf)
+<use comp_sen_5.pdf>
+Package pdftex.def Info: comp_sen_5.pdf used on input line 111.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<ica_5.png, id=19, 578.16pt x 433.62pt>
+File: ica_5.png Graphic file (type png)
+<use ica_5.png>
+Package pdftex.def Info: ica_5.png used on input line 114.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (11.65358pt too wide) in paragraph at lines 107--115
+[][]  []
+ []
+
+<5cwt.png, id=20, 578.16pt x 433.62pt>
+File: 5cwt.png Graphic file (type png)
+<use 5cwt.png>
+Package pdftex.def Info: 5cwt.png used on input line 122.
+(pdftex.def)             Requested size: 498.66258pt x 373.99765pt.
+<6energy_band.pdf, id=21, 614.295pt x 794.97pt>
+File: 6energy_band.pdf Graphic file (type pdf)
+<use 6energy_band.pdf>
+Package pdftex.def Info: 6energy_band.pdf used on input line 129.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<comp_sen_6.pdf, id=22, 614.295pt x 794.97pt>
+File: comp_sen_6.pdf Graphic file (type pdf)
+<use comp_sen_6.pdf>
+Package pdftex.def Info: comp_sen_6.pdf used on input line 133.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<ica_6.png, id=23, 578.16pt x 433.62pt>
+File: ica_6.png Graphic file (type png)
+<use ica_6.png>
+Package pdftex.def Info: ica_6.png used on input line 136.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (11.65358pt too wide) in paragraph at lines 129--137
+[][]  []
+ []
+
+<6cwt.png, id=24, 578.16pt x 433.62pt>
+File: 6cwt.png Graphic file (type png)
+<use 6cwt.png>
+Package pdftex.def Info: 6cwt.png used on input line 144.
+(pdftex.def)             Requested size: 498.66258pt x 373.99765pt.
+<7energy_band.pdf, id=25, 614.295pt x 794.97pt>
+File: 7energy_band.pdf Graphic file (type pdf)
+<use 7energy_band.pdf>
+Package pdftex.def Info: 7energy_band.pdf used on input line 151.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<comp_sen_7.pdf, id=26, 614.295pt x 794.97pt>
+File: comp_sen_7.pdf Graphic file (type pdf)
+<use comp_sen_7.pdf>
+Package pdftex.def Info: comp_sen_7.pdf used on input line 155.
+(pdftex.def)             Requested size: 245.71364pt x 317.98236pt.
+<ica_7.png, id=27, 578.16pt x 433.62pt>
+File: ica_7.png Graphic file (type png)
+<use ica_7.png>
+Package pdftex.def Info: ica_7.png used on input line 158.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+Overfull \hbox (11.65358pt too wide) in paragraph at lines 151--159
+[][]  []
+ []
+
+<7cwt.png, id=28, 578.16pt x 433.62pt>
+File: 7cwt.png Graphic file (type png)
+<use 7cwt.png>
+Package pdftex.def Info: 7cwt.png used on input line 166.
+(pdftex.def)             Requested size: 498.66258pt x 373.99765pt.
+[1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./1en
+ergy_band.pdf> <./comp_sen_1.pdf> <./ica_1.png (PNG copy)>] [2 <./1cwt.png (PNG
+ copy)>] [3 <./2energy_band.pdf> <./comp_sen_2.pdf> <./ica_2.png (PNG copy)>] [
+4 <./2cwt.png (PNG copy)>] [5 <./3energy_band.pdf> <./comp_sen_3.pdf> <./ica_3.
+png (PNG copy)>] [6 <./3cwt.png (PNG copy)>] [7 <./4energy_band.pdf> <./comp_se
+n_4.pdf> <./ica_4.png (PNG copy)>] [8 <./4cwt.png (PNG copy)>] [9 <./5energy_ba
+nd.pdf> <./comp_sen_5.pdf> <./ica_5.png (PNG copy)>] [10 <./5cwt.png (PNG copy)
+>] [11 <./6energy_band.pdf> <./comp_sen_6.pdf> <./ica_6.png (PNG copy)>] [12 <.
+/6cwt.png (PNG copy)>] [13 <./7energy_band.pdf> <./comp_sen_7.pdf> <./ica_7.png
+ (PNG copy)>] [14 <./7cwt.png (PNG copy)>] (./summary.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2442 strings out of 493315
+ 35133 string characters out of 6137904
+ 101377 words of memory out of 5000000
+ 5866 multiletter control sequences out of 15000+600000
+ 4849 words of font info for 18 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,7n,32p,254b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb>
+Output written on summary.pdf (14 pages, 2049689 bytes).
+PDF statistics:
+ 129 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+
