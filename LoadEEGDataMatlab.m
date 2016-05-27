@@ -3,7 +3,6 @@ function[EEG] = LoadEEGDataMatlab(reading_matrix, dataset_name, channel_file)
     % this differs from LoadEEGData in that it only takes in matlab matrix as record 
     % instead of .txt file
 
-    filename = readings_file;
     datasetname = dataset_name;
     file_path = [pwd '/' dataset_name '_Data'];
     band_cutoffs = [1, 4, 8, 12, 32, 60];
@@ -16,6 +15,8 @@ function[EEG] = LoadEEGDataMatlab(reading_matrix, dataset_name, channel_file)
     EEG = eeg_checkset( EEG );
     EEG.chanlocs = readlocs(channel_file);
     EEG = eeg_checkset( EEG );
+    strcat(EEG.setname, '.set')
+    file_path
     EEG = pop_saveset( EEG, 'filename', strcat(EEG.setname, '.set'),'filepath',file_path);
     
 

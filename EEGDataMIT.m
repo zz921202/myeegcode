@@ -24,8 +24,9 @@ classdef EEGDataMIT < EEGDataInterface
             channel_file = [ obj.data_dir '/channel_info.ced']
             [hdr, record] = edfread(obj.data_file);
             load([obj.data_dir '/channel_reverse_info.mat']);
-            channel_m = diff_inv * record;
-            obj.curEEG = LoadEEGDataMatlab(channel_m, 'hello', channel_file);
+            channel_m = channel_inv * record;
+            obj.curEEG = LoadEEGDataMatlab(channel_m, obj.dataset_name, channel_file);
+            obj = obj.extract_EEG_data();
         end
 
     end

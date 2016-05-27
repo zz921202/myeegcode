@@ -31,7 +31,7 @@ classdef EEGDataInterface < handle
 
     methods
     %% all load functionalities
-        function obj = EEGDataInterface()       
+        function obj = EEGDataInterface(obj)       
             % initialize an empty object, just set the dataset_name
             % initialize eeglab
             parpath = fileparts(pwd);
@@ -47,7 +47,7 @@ classdef EEGDataInterface < handle
         end
 
         function obj = load_raw(obj, readings_file)
-            channel_file = [pwd '/' 'emotive_channel_info.ced'];
+            channel_file = [pwd '/' 'emotive_channel_info.ced']
             obj.curEEG = LoadEEGData(readings_file, obj.dataset_name, channel_file);
             obj = obj.extract_EEG_data();
         end
@@ -96,7 +96,7 @@ classdef EEGDataInterface < handle
 
         function description = to_str(obj)
             % TODO provide human readable concise descriptor
-            description = '';
+            description = ''
         end
 
         %% easy plot to browse the data    
@@ -152,7 +152,7 @@ classdef EEGDataInterface < handle
         function window_obj = gen_ica_window(obj, start_time, interval_len)
                      % set the window for current analysis, 
 
-            [obj.start_loc, obj.end_loc] = get_interval_loc(obj, start_time, interval_len);
+            [obj.start_loc, obj.end_loc] = get_interval_loc(obj, start_time, interval_length);
             obj.xvec = (obj.start_loc : obj.end_loc) / obj.sampling_rate;
             ica_mat = obj.ica_data(:,obj.start_loc:obj.end_loc);
 
@@ -160,13 +160,14 @@ classdef EEGDataInterface < handle
             window_obj = feval(obj.window_generator);
             window_obj = window_obj.set_raw_feature(input_mat);
             window_obj.time_info = [start_time, end_time];
-            window_obj.color_code = obj.color_code(start_time, interval_len);
+            window_obj.color_code = obj.color_code(start_time, interval_len)
 
         end
 
         function window_obj = gen_raw_window(obj, start_time, interval_len)
-            
-            [obj.start_loc, obj.end_loc] = get_interval_loc(obj, start_time, interval_len);
+            obj.begin_time = begin_time;
+            obj.interval_length = interval_length;
+            [obj.start_loc, obj.end_loc] = get_interval_loc(obj, begin_time, interval_length);
             obj.xvec = (obj.start_loc : obj.end_loc) / obj.sampling_rate;
             raw_mat = obj.raw_data(:,obj.start_loc:obj.end_loc);
 
@@ -174,7 +175,7 @@ classdef EEGDataInterface < handle
             window_obj = feval(obj.window_generator);
             window_obj = window_obj.set_raw_feature(input_mat);
             window_obj.time_info = [start_time, end_time];
-            window_obj.color_code = obj.color_code(start_time, interval_len);
+            window_obj.color_code = obj.color_code(start_time, interval_len)
         end
     end
 end
