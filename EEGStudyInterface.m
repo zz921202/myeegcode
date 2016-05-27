@@ -8,6 +8,7 @@ classdef EEGStudyInterface < handle
         end_time
         stride
         window_len
+        feature_matirx
     end
 
     methods
@@ -16,7 +17,12 @@ classdef EEGStudyInterface < handle
             obj.EEGData = EEGStudyInterface();
             obj.EEGData.set_name('test_MIT');
 
+        end
 
+
+        function gen_feature_matrix(obj)
+            % pull extracted features from each eeg window to form a matrix for fitting
+            
         end
 
     end
