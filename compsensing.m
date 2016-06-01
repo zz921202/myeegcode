@@ -1,4 +1,4 @@
-function compsensing(v , num_trials, epoch_len)
+function loss_mean = compsensing(v , num_trials, epoch_len)
 % Experiment demo for the first EEG experiment in: 
 %   Zhilin Zhang, Tzyy-Ping Jung, Scott Makeig, Bhaskar D. Rao, 
 %   Compressed Sensing of EEG for Wireless Telemonitoring with Low Energy 
@@ -40,7 +40,7 @@ else
     end
 end
 [nrow, N] = size(X);
-compre_per = 1./ (1:10) ;
+compre_per = 1./ (2:6) ;
 
 
 
@@ -107,10 +107,11 @@ end
 
 loss_mean = mean(mse_lose , 1);
 loss_std = 1.959964 * std(mse_lose, 1) / sqrt(nrow);
-errorbar(1:10, loss_mean, loss_std);
+
+% errorbar(1:10, loss_mean, loss_std);
 
 
-xlabel('compression ratio')
-ylabel('compression loss (MSE)')
-title('compressive sensing')
+% xlabel('compression ratio')
+% ylabel('compression loss (MSE)')
+% title('compressive sensing')
 
