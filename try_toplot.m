@@ -7,8 +7,8 @@
 % z = [y,u];
 % m = arx(z,[2 2 1]);
 
-windows = [200:500:2500, 2980:10:3040]
-for window = windows
+% windows = [200:200:2500, 2980:10:3040, 3040:50:3400];
+for window = 100
     figure
     cur_data = c.data_windows(window).raw_feature;
     L = 512;
@@ -25,3 +25,11 @@ for window = windows
     xlabel('Frequency (Hz)')
     ylabel('|Y(f)|')
 end
+
+% low_cutoff = 1;
+% high_cutoff = 10;
+% test_cond = @(freq) and(freq >= low_cutoff, freq < high_cutoff);
+% x = [(-10:20)', (-10:20)'];
+% indicator = arrayfun(test_cond,x(:, 1));
+% energies = x(:, 2)
+% power = sum(energies(indicator)) / (high_cutoff - low_cutoff)

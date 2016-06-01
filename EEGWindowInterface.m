@@ -8,12 +8,17 @@ classdef EEGWindowInterface < handle
         color_code % to be used for encoding type of information
         time_info % [strat_time, end_time] used as reference only, to be set directly
         color_type
+        abs_power
+        freq
+        Fs
     end
 
     methods
     %% set input data
-        function set_raw_feature(obj, input_data)
+        function set_raw_feature(obj, input_data, Fs)
             obj.raw_feature = input_data;
+            obj.Fs = Fs;
+            obj.get_frequency_spectrum();
         end
 
         function extract_feature(obj)
@@ -32,7 +37,25 @@ classdef EEGWindowInterface < handle
             else
                 color_type = 3 ;
             end
-                
+        end
+        
+        function get_frequency_spectrum(obj)
+            Fs = obj.Fs;
+            cur_data = obj.raw_feature;
+            L = size(cur_data, 2);
+            NFFT = 2^nextpow2(L); % Next power of 2 from length of y
+            Y = fft(cur_data,NFFT, 2)/L;
+
+            obj.freq = Fs/2*linspace(0,1,NFFT/2+1);
+            obj.abs_power = 2*abs(Y(:,1:NFFT/2+1));
+            
+            % Y_sub = filter(1/20 * ones(1,20), 1, Y, [], 2);
+            % Plot single-sided amplitude spectrum.
+            % plot(f,2*abs(Y_sub(:,1:NFFT/2+1)))
+
+            % title(['Single-Sided Amplitude Spectrum of y(t) at ' num2str(window)])
+            % xlabel('Frequency (Hz)')
+            % ylabel('|Y(f)|')
         end 
     end
 

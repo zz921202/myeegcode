@@ -156,7 +156,7 @@ classdef EEGDataInterface < handle
             ica_mat = obj.ica_data(:,obj.start_loc:obj.end_loc);
             input_mat = ica_mat;
             
-            window_obj.set_raw_feature(input_mat);
+            window_obj.set_raw_feature(input_mat, obj.sampling_rate);
             window_obj.time_info = [start_time, start_time + interval_len];
             window_obj.color_code = obj.color_code(start_time, interval_len);
             window_obj.extract_feature()
@@ -167,8 +167,8 @@ classdef EEGDataInterface < handle
             [obj.start_loc, obj.end_loc] = get_interval_loc(obj, start_time, interval_len);
             raw_mat = obj.raw_data(:,obj.start_loc:obj.end_loc);
             input_mat = raw_mat;
-
-            window_obj.set_raw_feature(input_mat);
+            
+            window_obj.set_raw_feature(input_mat, obj.sampling_rate);
             window_obj.time_info = [start_time, start_time + interval_len];
             window_obj.color_code = obj.color_code(start_time, interval_len);
             window_obj.extract_feature()

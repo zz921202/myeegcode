@@ -47,7 +47,9 @@ classdef EEGStudyInterface < handle
             for start_loc = obj.start_locs
                 curwindow = feval(obj.window_generator);
                 obj.EEGData.gen_ica_window(start_loc, obj.window_length, curwindow);
+
                 obj.data_windows = [obj.data_windows, curwindow];
+
             end
             obj.num_windows = length(obj.start_locs);
             obj.gen_feature_matrix();
@@ -138,7 +140,7 @@ classdef EEGStudyInterface < handle
             %                     'Streams',stream);
 
             figure()
-            [idx, C] = kmeans(data_mat, k,'MaxIter',100,'Display', 'iter' ) ;
+            [idx, C] = kmeans(data_mat, k,'MaxIter',1000,'Display', 'iter' ) ;
             obj.idx = idx;
             obj.C = C;
             disp('finishing kmeans clustering');
