@@ -42,8 +42,8 @@ classdef EEGStudyInterface < handle
         function gen_data_windows(obj) 
 
             % generate window location
-            % TODO obj.start_locs = 0: obj.stride : (obj.EEGData.total_length - obj.window_length);
-            obj.start_locs = 2800: obj.stride: 3200; % I changed this because compressive sensing is just too slow
+            obj.start_locs = 0: obj.stride : (obj.EEGData.total_length - obj.window_length);
+            % obj.start_locs = 2800: obj.stride: 3200; % I changed this because compressive sensing is just too slow
             for start_loc = obj.start_locs
                 curwindow = feval(obj.window_generator);
                 obj.EEGData.gen_ica_window(start_loc, obj.window_length, curwindow);

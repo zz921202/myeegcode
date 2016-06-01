@@ -28,3 +28,11 @@ disp('finishing extracting all windows')
 c.plot_pca()
 disp('start to compute kmeans')
 c.k_means(10)
+
+%% gardern's energy implementation
+
+c.set_window_params(2, 1, 'EEGWindowGardnerEnergy')
+disp('finishing extracting all windows')
+c.plot_pca()
+disp('start to compute kmeans')
+c.k_means(10)

@@ -11,7 +11,7 @@ classdef EEGWindowBandPower < EEGWindowInterface
             end
             obj.feature = feature;
             obj.flattened_feature = feature(:);
-    end
+        end
 
 
 
