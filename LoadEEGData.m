@@ -8,6 +8,7 @@ function[EEG] = LoadEEGData(readings_file, dataset_name, channel_file)
     % Read data from file 
     M = dlmread(filename); 
     M = M';
+    M = row_mean_std_normalization(M);
 
     % Import data from array into EEGlab, and properly set data properties
     EEG = pop_importdata('dataformat','array','nbchan', 0,'data',M ,'srate', [128], 'pnts', 0,'xmin',0);

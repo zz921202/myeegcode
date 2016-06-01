@@ -13,20 +13,11 @@ classdef EEGDataInterface < handle
         ica_weights
         ica_inv
         chanlocs
-        cur_component_index=1;
-        start_loc
+        start_loc %TODO: outdated structure, to be removed
         end_loc
-        raw_vec
-        ica_vec
-        window_raw_vec
-        window_ica_vec
-        begin_time
-        interval_length
-        xvec
         data_path
         seizure_times = [] % [start_time, end_time] each row represents an entry
-        window_generator = 'EEGWindowInterface'
-
+        total_length
     end
 
     methods
@@ -53,6 +44,7 @@ classdef EEGDataInterface < handle
         end
 
         function obj = pop_load_set(obj)
+            % TODO remember to set seizure times in EEGStudyInterface
             obj.curEEG = pop_loadset();
             obj = obj.extract_EEG_data();
         end
@@ -69,8 +61,8 @@ classdef EEGDataInterface < handle
             obj.raw_data = obj.curEEG.data;
             obj.ica_data = obj.ica_weights * obj.raw_data;
             obj.chanlocs = obj.curEEG.chanlocs;
-            obj.raw_vec = obj.raw_data(obj.cur_component_index, :);
-            obj.ica_vec = obj.ica_data(obj.cur_component_index, :);
+            tot_pnts = size(obj.raw_data);
+            obj.total_length = tot_pnts(2) / obj.sampling_rate;
         end
 
         %% helper functions
@@ -131,50 +123,55 @@ classdef EEGDataInterface < handle
             %       pre-ictal and post-ictal should be explored for better representation
 
             % find out if it overlaps with ictal period
-            scaling = 20; % how many seconds to reach 0.1 color encoding
+            scaling = 300; % how many seconds to reach 0.1 color encoding
             window_end = window_length + window_start;
             start_times = obj.seizure_times(:, 1);
             end_times = obj.seizure_times(:, 2);
             start_time_cond  = any(and(window_start > start_times, window_start < end_times));
             end_time_cond = any(and(window_end > start_times, window_end < end_times));
-            if any(start_time_cond, end_time_cond)
-                color_encoding = 1;
+            if any([start_time_cond, end_time_cond])
+                color_encoding = 2;
             else
                 % find closet distance to the ictal state
-                dist_mat = min(min([abs(window_start - start_times), abs(window_start- end_times), abs(window_end - start_times), abs(window_end - end_times)]));
-                color_encoding = exp(dist_mat / scaling * log(0.1));
+                dist_start = min(min([abs(window_start - start_times),  abs(window_end - start_times)]));
+                dist_end = min(min([abs(window_end - end_times),abs(window_start- end_times)]));
+                if dist_end < dist_start
+                    color_encoding = 3 - exp(dist_end / scaling * log(0.1));
+                else
+                    color_encoding = exp(dist_end / scaling * log(0.1));
+                end
+
+                
             end
 
         end
 
 
 
-        function window_obj = gen_ica_window(obj, start_time, interval_len)
-                     % set the window for current analysis, 
+        function gen_ica_window(obj, start_time, interval_len, window_obj)
+            % set the window for current analysis, pass raw data to window obj and perform 
+            % analysis NOTE window object should be initialized before use
 
             [obj.start_loc, obj.end_loc] = get_interval_loc(obj, start_time, interval_len);
-            obj.xvec = (obj.start_loc : obj.end_loc) / obj.sampling_rate;
             ica_mat = obj.ica_data(:,obj.start_loc:obj.end_loc);
-
             input_mat = ica_mat;
-            window_obj = feval(obj.window_generator);
-            window_obj = window_obj.set_raw_feature(input_mat);
-            window_obj.time_info = [start_time, end_time];
+            
+            window_obj.set_raw_feature(input_mat);
+            window_obj.time_info = [start_time, start_time + interval_len];
             window_obj.color_code = obj.color_code(start_time, interval_len);
-
+            window_obj.extract_feature()
         end
 
-        function window_obj = gen_raw_window(obj, start_time, interval_len)
+        function gen_raw_window(obj, start_time, interval_len, window_obj)
             
             [obj.start_loc, obj.end_loc] = get_interval_loc(obj, start_time, interval_len);
-            obj.xvec = (obj.start_loc : obj.end_loc) / obj.sampling_rate;
             raw_mat = obj.raw_data(:,obj.start_loc:obj.end_loc);
-
             input_mat = raw_mat;
-            window_obj = feval(obj.window_generator);
-            window_obj = window_obj.set_raw_feature(input_mat);
-            window_obj.time_info = [start_time, end_time];
+
+            window_obj.set_raw_feature(input_mat);
+            window_obj.time_info = [start_time, start_time + interval_len];
             window_obj.color_code = obj.color_code(start_time, interval_len);
+            window_obj.extract_feature()
         end
     end
 end

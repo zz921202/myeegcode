@@ -4,56 +4,148 @@
 		"selected_items":
 		[
 			[
-				"chn",
-				"channel_file"
+				"color",
+				"color_codes"
 			],
 			[
-				"EEG",
-				"EEGDataMIT"
+				"dist",
+				"dist_start"
 			],
 			[
-				"ica",
-				"ica_mat"
+				"to",
+				"toString"
 			],
 			[
-				"cur",
-				"cur_vec"
+				"wind",
+				"window_generator"
 			],
 			[
-				"window",
-				"window_length"
-			],
-			[
-				"end",
-				"end_time"
-			],
-			[
-				"pca",
-				"pca_coordinates"
+				"num",
+				"num_windows"
 			],
 			[
 				"data",
 				"data_mat"
 			],
 			[
-				"raw",
-				"raw_mat"
+				"featue",
+				"feature_matirx"
+			],
+			[
+				"gen",
+				"gen_feature_matrix"
+			],
+			[
+				"window",
+				"window_generator"
+			],
+			[
+				"EEG",
+				"EEGData"
 			],
 			[
 				"win",
-				"window_length"
+				"window_generator"
 			],
 			[
-				"wind",
-				"window_vec"
+				"feau",
+				"feature_matirx"
+			],
+			[
+				"feature",
+				"feature_matirx"
+			],
+			[
+				"raw",
+				"raw_data"
+			],
+			[
+				"EE",
+				"EEGData"
+			],
+			[
+				"co",
+				"color_code"
+			],
+			[
+				"start_",
+				"start_times"
+			],
+			[
+				"colo",
+				"color_encoding"
+			],
+			[
+				"start_time",
+				"start_time_cond"
+			],
+			[
+				"end",
+				"end_times"
+			],
+			[
+				"sta",
+				"start_times"
+			],
+			[
+				"inter",
+				"interval_length"
+			],
+			[
+				"start",
+				"start_time"
+			],
+			[
+				"ica",
+				"ica_mat"
+			],
+			[
+				"extra",
+				"extracted_feature"
+			],
+			[
+				"inpu",
+				"input_data"
+			],
+			[
+				"in",
+				"interval_len"
+			],
+			[
+				"rw",
+				"raw_data"
+			],
+			[
+				"wir",
+				"writelines	function"
+			],
+			[
+				"chan",
+				"channel_info	statement"
+			],
+			[
+				"cha",
+				"channel_info	statement"
+			],
+			[
+				"all",
+				"all_channels	statement"
+			],
+			[
+				"chn",
+				"channel_file"
+			],
+			[
+				"cur",
+				"cur_vec"
+			],
+			[
+				"pca",
+				"pca_coordinates"
 			],
 			[
 				"Componet",
 				"component"
-			],
-			[
-				"num",
-				"num_trials"
 			],
 			[
 				"epo",
@@ -74,10 +166,6 @@
 			[
 				"channel",
 				"channel_file"
-			],
-			[
-				"chan",
-				"channel_std_path"
 			],
 			[
 				"file",
@@ -184,10 +272,6 @@
 				"np	module"
 			],
 			[
-				"sta",
-				"stable	function"
-			],
-			[
 				"ve",
 				"vectorized"
 			],
@@ -272,10 +356,6 @@
 				"centroids"
 			],
 			[
-				"in",
-				"index"
-			],
-			[
 				"wor",
 				"word_indices"
 			],
@@ -340,10 +420,6 @@
 				"L_in"
 			],
 			[
-				"all",
-				"all_theta"
-			],
-			[
 				"com",
 				"compute_cur_theta"
 			],
@@ -366,10 +442,6 @@
 			[
 				"apo",
 				"apoe1"
-			],
-			[
-				"gen",
-				"geno_levels"
 			],
 			[
 				"df",
@@ -442,110 +514,32 @@
 			[
 				"res",
 				"resid.sr"
-			],
-			[
-				"ks",
-				"ks.test"
-			],
-			[
-				"resi",
-				"resid.sr"
-			],
-			[
-				"my",
-				"mytitle"
-			],
-			[
-				"sp",
-				"sprintf"
-			],
-			[
-				"pol",
-				"polygon"
-			],
-			[
-				"plo",
-				"plot"
-			],
-			[
-				"fl",
-				"float"
-			],
-			[
-				"pos",
-				"position"
-			],
-			[
-				"li",
-				"link	Tag"
-			],
-			[
-				"w",
-				"width"
-			],
-			[
-				"get",
-				"get_spent	function"
-			],
-			[
-				"bu",
-				"buget_set"
-			],
-			[
-				"tb",
-				"table	Tag"
-			],
-			[
-				"mar",
-				"margin"
-			],
-			[
-				"tex",
-				"text-align"
-			],
-			[
-				"bo",
-				"bottom"
-			],
-			[
-				"pa",
-				"padding"
-			],
-			[
-				"padd",
-				"padding-top"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "classdef EEGDataMIT < EEGDataInterface\n% special read in file for MIT_CHB data set\n    properties\n    end\n\n    methods\n        function obj = EEGDataMIT(obj) \n            obj.sampling_rate = 256;\n        end\n\n        function obj = load_raw(obj, readings_file)\n    end\nend",
-			"file": "EEGDataMIT.m",
-			"file_size": 219,
-			"file_write_time": 131086142410000000,
+			"file": "LoadEEGData.m",
 			"settings":
 			{
-				"buffer_size": 272,
+				"buffer_size": 2023,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "classdef EEGDataInterface < handle\n% this is an interface for eegdata\n% it handles I/O and data extraction using time as coordinates\n% it is integrated with eeglab, provides raw data plot functionality, \n% as well as ica source separation (source component plot)\n\n    properties\n        curEEG\n        sampling_rate = 128\n        dataset_name % all data stored will be in the ./<dataset_name>Data/<dataset_name>_ext\n        raw_data = 1\n        ica_data\n        ica_weights\n        ica_inv\n        chanlocs\n        cur_component_index=1;\n        start_loc\n        end_loc\n        raw_vec\n        ica_vec\n        window_raw_vec\n        window_ica_vec\n        begin_time\n        interval_length\n        xvec\n        data_path\n\n    end\n\n    methods\n    %% all load functionalities\n        function obj = EEGDataInterface(obj)       \n            % initialize an empty object, just set the dataset_name\n            % initialize eeglab\n            parpath = fileparts(pwd);\n            addpath([parpath '/eeglab']);\n            eeglab;\n        end\n        \n \n       function obj = set_name(obj, dataset_name)\n            obj.dataset_name = dataset_name;\n            mkdir([dataset_name 'Data']);\n            obj.data_path = [pwd '/' dataset_name 'Data'];\n        end\n\n        function obj = load_raw(obj, readings_file)\n            channel_file = [pwd '/' 'emotive_channel_info.ced']\n            obj.curEEG = LoadEEGData(readings_file, obj.dataset_name, channel_file);\n            obj = obj.extract_EEG_data();\n        end\n\n        function obj = pop_load_set(obj)\n            obj.curEEG = pop_loadset();\n            obj = obj.extract_EEG_data();\n        end\n\n        function obj = load_set(obj, path_to_set)\n            obj.curEEG = pop_loadset(path_to_set);\n            obj = obj.extract_EEG_data();\n        end\n\n        function obj = extract_EEG_data(obj)\n            % extract values from EEG object for easier access\n            obj.ica_weights = obj.curEEG.icaweights * obj.curEEG.icasphere;\n            obj.ica_inv = obj.curEEG.icawinv;\n            obj.raw_data = obj.curEEG.data;\n            obj.ica_data = obj.ica_weights * obj.raw_data;\n            obj.chanlocs = obj.curEEG.chanlocs;\n            obj.raw_vec = obj.raw_data(obj.cur_component_index, :);\n            obj.ica_vec = obj.ica_data(obj.cur_component_index, :);\n        end\n\n            %% helper functions\n        function start_loc = get_time_loc(obj, time_in_sec) \n            % get the col_number of the first frame just after the time  \n            start_loc = round(obj.sampling_rate * time_in_sec) + 1;\n        end\n\n        function [start_loc, end_loc] = get_interval_loc(obj, begin_time, interval)\n            % inclusive of end point\n            start_loc = round(obj.sampling_rate * begin_time) + 1;\n            end_loc = round(obj.sampling_rate * (begin_time + interval));\n        end\n\n        function duration = get_total_length(obj)\n            duration = obj.curEEG.xmax;\n        end\n\n        function [raw_vec, ica_vec] = get_component(obj, index)\n            raw_vec = obj.data(index, :);\n            ica_vec = obj.data(index, :);\n        end\n\n\n    end\nend\n",
-			"file": "EEGDataInterface.m",
-			"file_size": 3090,
-			"file_write_time": 131086638150000000,
+			"file": "LoadEEGDataMatlab.m",
 			"settings":
 			{
-				"buffer_size": 3140,
+				"buffer_size": 2119,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "emotive_channel_info.ced",
+			"file": "playbook.m",
 			"settings":
 			{
-				"buffer_size": 686,
+				"buffer_size": 106,
 				"line_ending": "Unix"
 			}
 		}
@@ -570,6 +564,30 @@
 			],
 			[
 				"Anaconda Python Builder",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SendTextPlus/Python - Source File.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
 				""
 			]
 		],
@@ -670,10 +688,20 @@
 	},
 	"expanded_folders":
 	[
-		"/Volumes/zz22/seizure/myeegcode"
+		"/Users/Zhe/Documents/seizure/myeegcode"
 	],
 	"file_history":
 	[
+		"/Users/Zhe/Documents/seizure/myeegcode/EEGDataInterface.m~",
+		"/Users/Zhe/chb01/channel_names",
+		"/Users/Zhe/Documents/seizure/myeegcode/LoadEEGDataMatlab.m",
+		"/Users/Zhe/Documents/seizure/myeegcode/EEGWindowInterface.m",
+		"/Users/Zhe/Documents/seizure/myeegcode/EEGDataInterface.m",
+		"/Users/Zhe/Documents/seizure/myeegcode/MyEEG.m",
+		"/Users/Zhe/Documents/seizure/myeegcode/EEGDataMIT.m",
+		"/Users/Zhe/chb01/chb01-summary.txt",
+		"/Users/Zhe/Documents/seizure/myeegcode/.gitignore",
+		"/Users/Zhe/chb01/convert_channel.py",
 		"/Users/Zhe/Documents/EEGDataMIT.m",
 		"/Users/Zhe/Documents/EEGDataInterface.m",
 		"/Volumes/zz22/seizure/myeegcode/MyEEG.m",
@@ -791,17 +819,7 @@
 		"/Users/Zhe/Documents/django_projects/myapps/coltrane/templatetags/coltrane_tags.py",
 		"/Users/Zhe/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/Zhe/Documents/django_projects/templates/coltrane/tag_detail.html",
-		"/Users/Zhe/Documents/django_projects/myapps/coltrane/urls.py",
-		"/Users/Zhe/Documents/django_projects/templates/list.html",
-		"/Users/Zhe/Documents/django_projects/templates/coltrane/entry_archive_year.html",
-		"/Users/Zhe/Documents/django_projects/templates/coltrane/entry_base.html",
-		"/Users/Zhe/Documents/django_projects/templates/coltrane/url_list.html",
-		"/Users/Zhe/Documents/django_projects/templates/coltrane/tag_index.html",
-		"/Users/Zhe/Documents/django_projects/cms/cms/views.py",
-		"/Users/Zhe/Documents/django_projects/templates/fun/tryhtml.html",
-		"/Users/Zhe/Documents/django_projects/templates/coltrane/category_detail.html",
-		"/Users/Zhe/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
-		"/Users/Zhe/Library/Application Support/Sublime Text 3/Packages/User/Python (Django).sublime-settings"
+		"/Users/Zhe/Documents/django_projects/myapps/coltrane/urls.py"
 	],
 	"find":
 	{
@@ -812,6 +830,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -819,6 +838,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"kmeans",
+			"matirx",
+			"O2",
+			"F4",
+			"C4",
+			"F4",
+			"FP2",
+			"F8",
+			"T8",
+			"FT10",
+			"FT9",
+			"F7",
+			"O1",
+			"P3",
+			"C3",
+			"F3",
+			"T7",
+			"F7",
 			"\\label",
 			"change",
 			"1",
@@ -905,24 +942,84 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "EEGDataMIT.m",
+					"file": "LoadEEGData.m",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 272,
+						"buffer_size": 2023,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								260,
-								260
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Matlab/Matlab.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "LoadEEGDataMatlab.m",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								486,
+								486
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Matlab/Matlab.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "playbook.m",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
 							]
 						],
 						"settings":
@@ -937,75 +1034,11 @@
 					"type": "text"
 				}
 			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "EEGDataInterface.m",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3140,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1088,
-								1088
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Matlab/Matlab.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 34.0,
-						"translation.y": 231.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "emotive_channel_info.ced",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 686,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
-			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 21.0
 	},
 	"input":
 	{
@@ -1020,18 +1053,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -1099,7 +1125,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 173.0,
+	"side_bar_width": 202.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
