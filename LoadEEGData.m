@@ -1,8 +1,9 @@
-function[EEG] = LoadEEGData(readings_file, dataset_name, channel_file)
+function[EEG] = LoadEEGData(readings_file, dataset_name, channel_file, out_put_dir)
     
     filename = readings_file;
     datasetname = dataset_name;
-    file_path = [pwd '/' dataset_name '_Data'];
+    file_path = out_put_dir;
+    mkdir(file_path);
     band_cutoffs = [1, 4, 8, 12, 32, 60];
 
     % Read data from file 

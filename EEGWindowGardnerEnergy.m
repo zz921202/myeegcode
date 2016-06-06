@@ -1,4 +1,4 @@
-classdef EEGWindowGardner < EEGWindowInterface
+classdef EEGWindowGardnerEnergy < EEGWindowInterface
     % note that this is still a single channel approach, connectivity 
     % and other interesting properties are ignored
     methods
@@ -18,13 +18,14 @@ classdef EEGWindowGardner < EEGWindowInterface
         function cur_feature = single_chanel_energy(obj, vec)
             N = length(vec);
             % first order difference, curve length
-            diffs = filter([1 -1], 1, vec)(2:);
-            cl = log(sum(abs(diffs))) - N;
+            diffs = filter([1 -1], 1, vec);
+            cl = log(sum(abs(diffs(2:N)))) - N;
             % energy
             e = log(sum(vec.^2)) - N;
             % teager Energy
-            te = log(sum(x(2: N-1).^2 - x(1:N-2).^ x(3:N))) - N;
-            cur_feature = [cl, e, te]
+            te = log(sum(vec(2: N-1).^2 - vec(1:N-2).* vec(3:N))) - N;
+
+            cur_feature = [cl, e, te];
         end
     end
 end

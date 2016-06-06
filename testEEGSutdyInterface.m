@@ -8,7 +8,7 @@ c.import_data()
 
 % TODO: compare with other interictal, preictal and postictal states
 
-% c.set_window_params(8, 1, 'EEGWindowBandPower')
+% c.set_window_params(8, 0.5, 'EEGWindowBandPower')
 % disp('finishing extracting all windows')
 % c.plot_pca()
 % disp('start to compute kmeans')
@@ -23,11 +23,11 @@ c.import_data()
 % now just to make the feature work,  I am not pushing for performance, and I am not expecting great performance
 
 
-c.set_window_params(0.5, 5, 'EEGWindowCompSensing')
-disp('finishing extracting all windows')
-c.plot_pca()
-disp('start to compute kmeans')
-c.k_means(10)
+% c.set_window_params(0.5, 5, 'EEGWindowCompSensing')
+% disp('finishing extracting all windows')
+% c.plot_pca()
+% disp('start to compute kmeans')
+% c.k_means(10)
 
 %% gardern's energy implementation
 

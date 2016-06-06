@@ -34,12 +34,47 @@ classdef EEGDataInterface < handle
        function obj = set_name(obj, dataset_name)
             obj.dataset_name = dataset_name;
             mkdir([dataset_name '_Data']);
-            obj.data_path = [pwd '/' dataset_name 'Data'];
+            obj.data_path = [pwd '/' dataset_name '_Data'];
+        end
+
+        function faster_load_raw(obj, reading_file)
+            % develop prototype for loading data with FASTER prepossessing capability
+            % to be integrated with EEGDataInterface
+            % because of this stupid design, I'm gonna use ====> temp_folder =====> desired folder and output_name
+
+            % Import data from array into EEGlab, and properly set data properties
+            myeegcode_path = pwd;
+
+            channel_file = [myeegcode_path, '/emotive_channel_info.ced'];
+
+            % generate a set data structure first
+            M = dlmread(reading_file); 
+            M = M';
+            % M = M(:, 1:1024); % TODO  remove this for testing only
+            M = row_mean_std_normalization(M);
+            
+            EEG = pop_importdata('dataformat','array','nbchan', 0,'data',M ,'srate', [128], 'pnts', 0,'xmin',0);
+            EEG = eeg_checkset( EEG );
+            EEG.chanlocs = readlocs(channel_file);
+            EEG = eeg_checkset( EEG );
+            EEG = pop_saveset( EEG, 'filename', ['pre.set'],'filepath',[myeegcode_path, '/Faster_Processing/pre']);
+
+            % use options
+            load([myeegcode_path, '/Faster_Processing/faster_options.mat'])
+            FASTER(option_wrapper)
+
+            % %% load the set into EEGDataInterface and save them
+            obj.curEEG = pop_loadset([myeegcode_path, '/Faster_Processing/post/pre.set']);
+            % save it to desired output
+            mkdir(obj.data_path)
+            pop_saveset( obj.curEEG, 'filename', ['faster_', obj.dataset_name], 'filepath',obj.data_path);
+            % load EEGDataInterface
+            obj = obj.extract_EEG_data();
         end
 
         function obj = load_raw(obj, readings_file)
             channel_file = [pwd '/' 'emotive_channel_info.ced'];
-            obj.curEEG = LoadEEGData(readings_file, obj.dataset_name, channel_file);
+            obj.curEEG = LoadEEGData(readings_file, obj.dataset_name, channel_file, obj.data_path);
             obj = obj.extract_EEG_data();
         end
 
@@ -56,9 +91,15 @@ classdef EEGDataInterface < handle
 
         function obj = extract_EEG_data(obj)
             % extract values from EEG object for easier access
+            % can detect if data has been epoched & perform adaptation to fit the current module
+
             obj.ica_weights = obj.curEEG.icaweights * obj.curEEG.icasphere;
             obj.ica_inv = obj.curEEG.icawinv;
             obj.raw_data = obj.curEEG.data;
+            if length(size(obj.curEEG.data)) == 3
+                [d1, d2, d3] = size(obj.curEEG.data);
+                obj.raw_data = reshape(obj.curEEG.data, [d1, d2 * d3]);
+            end
             obj.ica_data = obj.ica_weights * obj.raw_data;
             obj.chanlocs = obj.curEEG.chanlocs;
             tot_pnts = size(obj.raw_data);
@@ -98,15 +139,15 @@ classdef EEGDataInterface < handle
         end
 
         function browse_raw(obj)
-            eegplot(obj.raw_data)
+            eegplot(obj.raw_data, 'srate', obj.sampling_rate);
         end
 
         function browse_ica(obj)
-            eegplot(obj.ica_data)
+            eegplot(obj.ica_data, 'srate', obj.sampling_rate);
         end
 
         function ica_electrodes(obj)
-            pop_topoplot(obj.curEEG, 2)
+            pop_topoplot(obj.curEEG, 0)
         end
 
         % generate eeg_window object for feature extraction
@@ -114,12 +155,12 @@ classdef EEGDataInterface < handle
             obj.window_generator = object_class_name;
         end
 
-        % TODO generate color encoding to emphasis not only pre-ictal, ictal and post-ictal features, but the transition between them as well
+        % generate color encoding to emphasis not only pre-ictal, ictal and post-ictal features, but the transition between them as well
         function color_encoding = color_code(obj, window_start, window_length)
             % I implement a stupid coding just for testing
             % it looks like ___/start_time-----end_time\______ symmetric
             % color encoding will range from 0 to 1, with 1 being the most ictal window
-            % TODO maybe we should assign a different encoding for ictal period or the symmetry between 
+            % maybe we should assign a different encoding for ictal period or the symmetry between 
             %       pre-ictal and post-ictal should be explored for better representation
 
             % find out if it overlaps with ictal period
