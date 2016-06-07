@@ -1,4 +1,4 @@
-test_MITData/
+test_MIT_Data/
 D1_Data/
 Juarez_Data/
 report/
@@ -6,3 +6,4 @@ raw_data/
 processed_data/
 Faster_Processing/pre/
 Faster_Processing/post/
+html/
