@@ -1,4 +1,6 @@
-function loss_mean = compsensing(v , num_trials, epoch_len)
+function loss_mean = compsensing(v , num_trials, epoch_len, opt1)
+% opt1 is used to set the number of compression ratio to be used
+
 % Experiment demo for the first EEG experiment in: 
 %   Zhilin Zhang, Tzyy-Ping Jung, Scott Makeig, Bhaskar D. Rao, 
 %   Compressed Sensing of EEG for Wireless Telemonitoring with Low Energy 
@@ -40,7 +42,11 @@ else
     end
 end
 [nrow, N] = size(X);
-compre_per = 1./ (2:6) ;
+if nargin == 4
+    compre_per = 1./ opt1;
+else
+    compre_per = 1./ (2:6) ;
+end
 
 
 

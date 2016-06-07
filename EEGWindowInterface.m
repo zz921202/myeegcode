@@ -57,6 +57,39 @@ classdef EEGWindowInterface < handle
             % xlabel('Frequency (Hz)')
             % ylabel('|Y(f)|')
         end 
+
+        function plot_my_feature(obj)
+            % most appropriate representation of raw feature
+            obj.plot_feature(obj.feature);
+        end
+
+        function plot_his_feature(obj, flattened_feature)
+            feature_m = reshape(flattened_feature, size(obj.feature));
+            obj.plot_feature(feature_m);
+        end
+
+
+        function plot_feature(obj, feature_m)
+            % TODO to be implemented individually
+            plot(feature_m);
+        end
+
+        function plot_raw_feature(obj)
+            raw_feature = obj.raw_feature;
+            fs = obj.Fs;
+            eegplot(raw_feature, 'srate', fs, 'winlength', size(raw_feature,2)/fs);
+
+        end
+
+        function y = get_functional(obj)
+            % TODO
+            y = 0;
+        end
+
+        function  mystr = get_functional_label(obj)
+            % TODO
+            mystr = 'nothing'
+        end
     end
 
 end

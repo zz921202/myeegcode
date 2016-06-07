@@ -20,5 +20,21 @@ classdef EEGWindowBandPower < EEGWindowInterface
             indicator = arrayfun(test_cond,obj.freq);
             cur_power = sum(obj.abs_power(:,indicator), 2) / (high_cutoff - low_cutoff);
         end
+
+
+
+        function plot_feature(obj, feature)%
+            imagesc(feature);
+            colorbar;
+        end 
+
+        function y = get_functional(obj)
+            y = sqrt(sum(obj.flattened_feature.^2));
+        end
+
+        function mystr = get_functional_label(obj)
+            mystr = 'l2 norm';
+        end
+
     end
 end

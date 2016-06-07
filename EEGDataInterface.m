@@ -7,7 +7,7 @@ classdef EEGDataInterface < handle
     properties
         curEEG
         sampling_rate = 128
-        dataset_name % all data stored will be in the ./<dataset_name>Data/<dataset_name>_ext
+        dataset_name % all data stored will be in the ./processed_data/<dataset_name>Data/<dataset_name>_ext
         raw_data = 1
         ica_data
         ica_weights
@@ -31,10 +31,10 @@ classdef EEGDataInterface < handle
         end
         
  
-       function obj = set_name(obj, dataset_name)
+       function obj = set_name(obj, dataset_name, data_dir) 
             obj.dataset_name = dataset_name;
             mkdir([dataset_name '_Data']);
-            obj.data_path = [pwd '/' dataset_name '_Data'];
+            obj.data_path = [pwd '/processed_data/' data_dir '_Data'];
         end
 
         function faster_load_raw(obj, reading_file)
@@ -150,6 +150,12 @@ classdef EEGDataInterface < handle
             pop_topoplot(obj.curEEG, 0)
         end
 
+        function raw_electrodes(obj)
+            figure()
+            topoplot([], obj.curEEG.chanlocs, 'style','blank','electrodes','numbers', 'chaninfo',obj.curEEG.chaninfo ...
+            ,'emarker', {'.','k',[],1});
+        end
+
         % generate eeg_window object for feature extraction
         function set_window_obj(obj, object_class_name)
             obj.window_generator = object_class_name;
@@ -164,7 +170,7 @@ classdef EEGDataInterface < handle
             %       pre-ictal and post-ictal should be explored for better representation
 
             % find out if it overlaps with ictal period
-            scaling = 300; % how many seconds to reach 0.1 color encoding
+            scaling = obj.total_length; % TODO 300 how many seconds to reach 0.1 color encoding
             window_end = window_length + window_start;
             start_times = obj.seizure_times(:, 1);
             end_times = obj.seizure_times(:, 2);

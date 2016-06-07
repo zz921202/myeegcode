@@ -9,9 +9,13 @@
 
 
 
-y = sin([1:300]') + 0.5*randn(300,1);
-y = iddata(y);
-mb = ar(y,4,'burg');
-mfb = ar(y,4);
-
-stem(resid(mb, y))
+% y = sin([1:300]') + 0.5*randn(300,1);
+% y = iddata(y);
+% mb = ar(y,4,'burg');
+% mfb = ar(y,4);
+% 
+% stem(resid(mb, y))
+close all
+figure()
+topoplot([], cc.EEGData.curEEG.chanlocs, 'style','blank','electrodes','numbers', 'chaninfo',curEEG.chaninfo ...
+,'emarker', {'.','k',[],1});

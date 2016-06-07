@@ -17,6 +17,7 @@ classdef EEGStudyInterface < handle
         color_types
         idx
         C
+        pca_coordinates
     end
 
     methods
@@ -29,6 +30,8 @@ classdef EEGStudyInterface < handle
             obj.EEGData.load_set('/Users/Zhe/Documents/seizure/myeegcode/test_MIT_Data/test_MIT_rejected.set');
             obj.EEGData.set_name('test_MIT');
             obj.EEGData.seizure_times = [2996, 3036];
+
+
         end
 
         function set_window_params(obj, window_length, stride, window_generator)
@@ -46,8 +49,7 @@ classdef EEGStudyInterface < handle
             % obj.start_locs = 2800: obj.stride: 3200; % I changed this because compressive sensing is just too slow
             for start_loc = obj.start_locs
                 curwindow = feval(obj.window_generator);
-                obj.EEGData.gen_ica_window(start_loc, obj.window_length, curwindow);
-
+                obj.EEGData.gen_raw_window(start_loc, obj.window_length, curwindow); %TODO changed backed to raw window
                 obj.data_windows = [obj.data_windows, curwindow];
 
             end
@@ -104,7 +106,7 @@ classdef EEGStudyInterface < handle
         end
 
         % pca
-        function plot_pca(obj)
+        function pca(obj)
             data_mat = obj.feature_matrix;
             if isempty(obj.V)
                 [U,S,V] = svd(data_mat);
@@ -114,21 +116,28 @@ classdef EEGStudyInterface < handle
                 V = obj.V;
                 S = obj.S;
             end
+            pca_coordinates = data_mat * V(:, 1:3);
             
+            obj.pca_coordinates = pca_coordinates;
+        end
+
+        function plot_pca(obj)
+            obj.pca();
+
             figure()
+            pca_coordinates = obj.pca_coordinates;
             subplot(131)
-            bar(diag(S))
+            bar(diag(obj.S))
             title(['PCA' obj.toString])
 
             subplot(132)
-            pca_coordinates = data_mat * V(:, 1:3);
+            
             scatter(pca_coordinates(:,1), pca_coordinates(:,2), 50,obj.color_codes, 'filled')
-
+            % %TODO changed scale for fair comparison
             subplot(133)
             scatter3(pca_coordinates(:, 1), pca_coordinates(:, 2), pca_coordinates(:, 3), 50, obj.color_codes, 'filled');
-
+            % zlim([-0.4, 0.4])
             colorbar()
-
         end
 
         function porp = k_means(obj, k)
@@ -149,6 +158,10 @@ classdef EEGStudyInterface < handle
             subplot(121)
             plot(C')
             title('kmeans vectors')
+            
+            ss = 1:k;
+            ss = arrayfun(@num2str, ss, 'UniformOutput', false);
+            legend(ss)
 
             subplot(122)
             obj.bar_plot(idx);
@@ -156,23 +169,66 @@ classdef EEGStudyInterface < handle
 
 
 
+            
+            obj.pca();
+            pca_coordinates = obj.pca_coordinates;
+            figure()
+            scatter(pca_coordinates(:,1), pca_coordinates(:,2), 50,obj.idx, 'filled')
+            colorbar;
 
-            for i = 0:1:(k/5-1)                
+            first_window = obj.data_windows(1);
+            n = 3; % number of subplots per graph, individual plots
+            for i = 0:1:floor(k/n)                
                 figure()
-                for j = 1:5
-                    curidx = 5 * i + j;
-                    subplot(1, 5, j)
-                    plot(C(curidx, :)')
+                for j = 1:n
+                    curidx = n * i + j;
+                    if curidx > k
+                        break
+                    end
+                    subplot(1, n, j)
+                    curfeature = C(curidx, :);
+                    first_window.plot_his_feature(curfeature(:));
                     title(sprintf('%d th compoenent',curidx))
                 end
             end
+
+            for i = 0:1:floor(k/n) 
+                % plot raw temporal data
+                % figure()
+                for j = 1:n
+                    curidx = n * i + j;
+                    if curidx > k
+                        break
+                    end
+                    windowidx = find(idx == curidx);
+                    type_windows = obj.data_windows(windowidx);
+                    first_window = type_windows(2);
+                    first_window.plot_raw_feature();
+                    title(sprintf('%d th compoenent',curidx));
+                end
+            end
+
+
+
+            % show original temporal feature(time series) corresponding to each feature, take the mean
+
         end
 
+        function plot_temporal_evolution(obj)
+            y = [];
+            for curwindow = obj.data_windows
+                y = [y, curwindow.get_functional()];
+            end
+            figure()
+            plot(obj.start_locs, y)
+            xlabel('time')
+            ylabel(curwindow.get_functional_label)
+            title('temporal evolution')
+
+        end
 
         %% Quantitative Analysis primarily Supervised Learning, the even more exciting part
 
         
-
-
     end
 end

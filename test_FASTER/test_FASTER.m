@@ -2,9 +2,10 @@
 % to be integrated with EEGDataInterface
 % because of this stupid design, I'm gonna use ====> temp_folder =====> desired folder and output_name
 
-obj = EEGDataInterface
-obj.set_name('test_FASTER')
+
 addpath(cd(cd('..')))
+obj = EEGDataInterface
+obj.set_name('test_FASTER', 'test_FASTER')
 
 % Import data from array into EEGlab, and properly set data properties
 myeegcode_path = '/Users/Zhe/Documents/seizure/myeegcode';
@@ -35,17 +36,18 @@ EEG = pop_saveset( EEG, 'filename', ['pre.set'],'filepath',[myeegcode_path, '/Fa
 
 %% use options
 load([myeegcode_path, '/Faster_Processing/faster_options.mat'])
+option_wrapper.options.channel_options.bad_channels = [5,8]
 FASTER(option_wrapper)
 
 % %% load the set into EEGDataInterface and save them
 
 obj.curEEG = pop_loadset([myeegcode_path, '/Faster_Processing/post/pre.set']);
 % save it to desired output
-mkdir(obj.data_path)
-pop_saveset( obj.curEEG, 'filename', [obj.dataset_name],'filepath',obj.data_path);
+% mkdir(obj.data_path)
+% pop_saveset( obj.curEEG, 'filename', [obj.dataset_name],'filepath', [myeegcode, '/test_FASTER']);
 
-% load EEGDataInterface
-obj = obj.extract_EEG_data();
+% % load EEGDataInterface
+% obj = obj.extract_EEG_data();
 
 
 
