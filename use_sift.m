@@ -1,8 +1,12 @@
-parpath = fileparts(pwd);
-addpath([parpath '/eeglab']);
-eeglab;
+% parpath = fileparts(pwd);
+% addpath([parpath '/eeglab']);
+% eeglab;
+% 
+% EEG = pop_loadset();
 
-EEG = pop_loadset();
+% EEG = pop_dipfit_settings(EEG);
+% EEG = pop_dipfit_gridsearch(EEG);
+
 load('./sift_options/prepdata.mat')
 EEG = pre_prepData('EEG', EEG, cfg);
 

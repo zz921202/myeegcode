@@ -15,7 +15,23 @@
 % mfb = ar(y,4);
 % 
 % stem(resid(mb, y))
-close all
-figure()
-topoplot([], cc.EEGData.curEEG.chanlocs, 'style','blank','electrodes','numbers', 'chaninfo',curEEG.chaninfo ...
-,'emarker', {'.','k',[],1});
+% close all
+% figure()
+% topoplot([], cc.EEGData.curEEG.chanlocs, 'style','blank','electrodes','numbers', 'chaninfo',curEEG.chaninfo ...
+% ,'emarker', {'.','k',[],1});
+
+% f = EEG();
+% f.chanlocs = c.chanlocs;
+% f.srate = '128';
+% f.trials = 1;
+c = EEGDataInterface;
+c.pop_load_set()
+M = c.raw_data; % matrix 
+f = LoadEEGDataMatlab(M, 'fffuck', 'emotive_channel_info.ced', 128, 0);
+curEEG = c.curEEG;
+f.data = c.raw_data;
+f.icaact = c.ica_data;
+f.icawinv = c.curEEG.icawinv;
+f.icasphere = c.curEEG.icasphere;
+f.icaweights = c.curEEG.icaweights;
+EEG = f;

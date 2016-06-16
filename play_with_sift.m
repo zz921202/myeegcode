@@ -7,13 +7,13 @@ eeglab;
 EEG = pop_loadset();
 % eeglab redraw
 [EEG, cfg] = pop_pre_prepData(EEG)
-save('./sift_options/prepdata', 'cfg')
+save('./sift_opt/prepdata', 'cfg')
 [EEG, cfg] = pop_est_fitMVAR(EEG)
-save('./sift_options/fitMVAR', 'cfg')
+save('./sift_opt/fitMVAR', 'cfg')
 [EEG, cfg] = pop_est_validateMVAR(EEG)
-save('./sift_options/validateMVAR', 'cfg')
+save('./sift_opt/validateMVAR', 'cfg')
 [EEG, cfg] = pop_est_mvarConnectivity(EEG)
-save('./sift_options/mvarConnectivity', 'cfg')
+save('./sift_opt/mvarConnectivity', 'cfg')
 
 EEG = pop_dipfit_settings(EEG)
 EEG = pop_dipfit_gridsearch(EEG)

@@ -28,7 +28,7 @@ classdef EEGWindowInterface < handle
 
         function color_type = get_color_type(obj)
             % interitcal state
-            if obj.color_code < 0.1 | obj.color_code > 2.9
+            if obj.color_code < 0.1 | obj.color_code > 3.9
                 color_type = 0;
             elseif obj.color_code < 2
                 color_type = 1 ;% preictal state
@@ -58,18 +58,26 @@ classdef EEGWindowInterface < handle
             % ylabel('|Y(f)|')
         end 
 
-        function plot_my_feature(obj)
+        function plot_my_feature(obj, opt1)
             % most appropriate representation of raw feature
-            obj.plot_feature(obj.feature);
+            if nargin == 2
+                obj.plot_feature(obj.feature, opt1);
+            else
+                obj.plot_feature(obj.feature)
+            end
         end
 
-        function plot_his_feature(obj, flattened_feature)
+        function plot_his_feature(obj, flattened_feature, opt1)
             feature_m = reshape(flattened_feature, size(obj.feature));
-            obj.plot_feature(feature_m);
+            if nargin == 3
+                obj.plot_feature(feature_m, opt1);
+            else
+                obj.plot_feature(feature_m)
+            end
         end
 
 
-        function plot_feature(obj, feature_m)
+        function plot_feature(obj, feature_m, opt1)
             % TODO to be implemented individually
             plot(feature_m);
         end

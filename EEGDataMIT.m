@@ -8,7 +8,7 @@ classdef EEGDataMIT < EEGDataInterface
     methods
         
         function obj = EEGDataMIT(obj) 
-            obj.sampling_rate = 256;
+            obj.sampling_rate = 256; %TODO
         end
 
         % automatic detection will start time will be added subsequently
@@ -22,10 +22,12 @@ classdef EEGDataMIT < EEGDataInterface
 
         function obj = load_raw(obj)
             channel_file = [ obj.data_dir '/channel_info.ced']
+            disp(['........reading form', obj.data_file, '.........'])
             [hdr, record] = edfread(obj.data_file);
             load([obj.data_dir '/channel_reverse_info.mat']);
             channel_m = channel_inv * record;
-            obj.curEEG = LoadEEGDataMatlab(channel_m, obj.dataset_name, channel_file, 256);
+            % channel_m = channel_m(:, 1:256);
+            obj.curEEG = LoadEEGDataMatlab(channel_m, obj.dataset_name, channel_file, 256, 'CHB_MIT', 'MIT');
             obj = obj.extract_EEG_data();
         end
 

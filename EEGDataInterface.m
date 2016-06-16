@@ -33,8 +33,9 @@ classdef EEGDataInterface < handle
  
        function obj = set_name(obj, dataset_name, data_dir) 
             obj.dataset_name = dataset_name;
-            mkdir([dataset_name '_Data']);
             obj.data_path = [pwd '/processed_data/' data_dir '_Data'];
+            mkdir(obj.data_path);
+            
         end
 
         function faster_load_raw(obj, reading_file)
@@ -44,7 +45,7 @@ classdef EEGDataInterface < handle
 
             % Import data from array into EEGlab, and properly set data properties
             myeegcode_path = pwd;
-
+            % TODO  remove this for testing only this is used for emotiv only
             channel_file = [myeegcode_path, '/emotive_channel_info.ced'];
 
             % generate a set data structure first
@@ -63,8 +64,21 @@ classdef EEGDataInterface < handle
             load([myeegcode_path, '/Faster_Processing/faster_options.mat'])
             FASTER(option_wrapper)
 
-            % %% load the set into EEGDataInterface and save them
+            % load the set into EEGDataInterface and save them 
             obj.curEEG = pop_loadset([myeegcode_path, '/Faster_Processing/post/pre.set']);
+            % unepoch data
+            obj = obj.extract_EEG_data();
+            M = obj.raw_data; % matrix 
+
+            f = LoadEEGDataMatlab(M, obj.dataset_name, channel_file,128, 0); % 0 do not run any algorithm
+            curEEG = obj.curEEG;
+            f.data = obj.raw_data;
+            f.icaact = obj.ica_data;
+            f.icawinv = obj.curEEG.icawinv;
+            f.icasphere = obj.curEEG.icasphere;
+            f.icaweights = obj.curEEG.icaweights;
+            obj.curEEG = f;
+
             % save it to desired output
             mkdir(obj.data_path)
             pop_saveset( obj.curEEG, 'filename', ['faster_', obj.dataset_name], 'filepath',obj.data_path);
@@ -170,7 +184,7 @@ classdef EEGDataInterface < handle
             %       pre-ictal and post-ictal should be explored for better representation
 
             % find out if it overlaps with ictal period
-            scaling = obj.total_length; % TODO 300 how many seconds to reach 0.1 color encoding
+            scaling = 300; % TODO 300 how many seconds to reach 0.1 color encoding
             window_end = window_length + window_start;
             start_times = obj.seizure_times(:, 1);
             end_times = obj.seizure_times(:, 2);
@@ -183,7 +197,7 @@ classdef EEGDataInterface < handle
                 dist_start = min(min([abs(window_start - start_times),  abs(window_end - start_times)]));
                 dist_end = min(min([abs(window_end - end_times),abs(window_start- end_times)]));
                 if dist_end < dist_start
-                    color_encoding = 3 - exp(dist_end / scaling * log(0.1));
+                    color_encoding = 4 - exp(dist_end / scaling * log(0.1));
                 else
                     color_encoding = exp(dist_end / scaling * log(0.1));
                 end

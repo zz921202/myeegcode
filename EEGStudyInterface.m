@@ -22,14 +22,23 @@ classdef EEGStudyInterface < handle
 
     methods
 
-        function import_data(obj)
+        function import_data(obj, opt1, opt2, opt3)
+            % opt1 import data file
+            % opt2 import dataset name
+            % opt3 seizure times mx2 matrix
+
+            if nargin == 1
+                opt1 = '/Users/Zhe/Documents/seizure/myeegcode/test_MIT_Data/test_MIT_rejected.set';
+                opt2 = 'test_MIT';
+                opt3 = [2996, 3036];
             %  maybe rather than subclassing, change to just function calls, 
             % but I guess it might be a sensible thing to do when there are some many parameters to set
-
+            end
             obj.EEGData = EEGDataMIT();
-            obj.EEGData.load_set('/Users/Zhe/Documents/seizure/myeegcode/test_MIT_Data/test_MIT_rejected.set');
-            obj.EEGData.set_name('test_MIT');
-            obj.EEGData.seizure_times = [2996, 3036];
+
+            obj.EEGData.load_set(opt1);
+            obj.EEGData.set_name(opt2, 'CHB_MIT');
+            obj.EEGData.seizure_times = opt3;
 
 
         end
@@ -42,20 +51,30 @@ classdef EEGStudyInterface < handle
 
         end
 
-        function gen_data_windows(obj) 
+        function gen_data_windows(obj, opt1)
+            %opt1 for parallel programming 
 
             % generate window location
             obj.start_locs = 0: obj.stride : (obj.EEGData.total_length - obj.window_length);
-            % obj.start_locs = 2800: obj.stride: 3200; % I changed this because compressive sensing is just too slow
+            %obj.start_locs = [ 2000,  2990, 3000, 3040, 3100]; % I changed this because compressive sensing is just too slow
+            counter = 0
+
             for start_loc = obj.start_locs
+                counter = counter + 1;
+                if mod(counter, 5) == 0
+                    disp(['......window : ' num2str(counter) '.........'])
+                end
+
                 curwindow = feval(obj.window_generator);
                 obj.EEGData.gen_raw_window(start_loc, obj.window_length, curwindow); %TODO changed backed to raw window
                 obj.data_windows = [obj.data_windows, curwindow];
 
             end
+
             obj.num_windows = length(obj.start_locs);
             obj.gen_feature_matrix();
             obj.toString = [class(obj) 'from 0 to ' num2str(obj.EEGData.total_length) ' with ' num2str(obj.num_windows) ' ' obj.window_generator ];
+
         end
 
         %% helper functions, to be called inside each subclass
@@ -121,26 +140,30 @@ classdef EEGStudyInterface < handle
             obj.pca_coordinates = pca_coordinates;
         end
 
-        function plot_pca(obj)
+        function plot_pca(obj, opt1)
             obj.pca();
 
             figure()
             pca_coordinates = obj.pca_coordinates;
-            subplot(131)
-            bar(diag(obj.S))
-            title(['PCA' obj.toString])
+            % subplot(131)
+            % bar(diag(obj.S))
+            % title(['PCA' obj.toString])
 
-            subplot(132)
+            % subplot(132)
             
-            scatter(pca_coordinates(:,1), pca_coordinates(:,2), 50,obj.color_codes, 'filled')
+            
             % %TODO changed scale for fair comparison
-            subplot(133)
-            scatter3(pca_coordinates(:, 1), pca_coordinates(:, 2), pca_coordinates(:, 3), 50, obj.color_codes, 'filled');
-            % zlim([-0.4, 0.4])
+            % subplot(133)
+            if nargin == 2
+                scatter3(pca_coordinates(:, 1), pca_coordinates(:, 2), pca_coordinates(:, 3), 50, obj.color_codes, 'filled');
+            else
+                scatter(pca_coordinates(:,1), pca_coordinates(:,2), 50,obj.color_codes, 'filled')
+            end
+            % % zlim([-0.4, 0.4])
             colorbar()
         end
 
-        function porp = k_means(obj, k)
+        function porp = k_means(obj, k, opt1)
             % function for normalize a vector 
             % porp the percentage of correct clustering
             data_mat = obj.feature_matrix;
@@ -150,7 +173,7 @@ classdef EEGStudyInterface < handle
             %                     'Streams',stream);
 
             figure()
-            [idx, C] = kmeans(data_mat, k,'MaxIter',1000,'Display', 'iter' ) ;
+            [idx, C] = kmeans(data_mat, k,'MaxIter',1000, 'Replicates',20) ;
             obj.idx = idx;
             obj.C = C;
             disp('finishing kmeans clustering');
@@ -171,59 +194,74 @@ classdef EEGStudyInterface < handle
 
             
             obj.pca();
+
             pca_coordinates = obj.pca_coordinates;
             figure()
+
             scatter(pca_coordinates(:,1), pca_coordinates(:,2), 50,obj.idx, 'filled')
+            % scatter3(pca_coordinates(:, 1), pca_coordinates(:, 2), pca_coordinates(:, 3), 50,obj.idx, 'filled');
             colorbar;
 
             first_window = obj.data_windows(1);
+
             n = 3; % number of subplots per graph, individual plots
-            for i = 0:1:floor(k/n)                
-                figure()
-                for j = 1:n
-                    curidx = n * i + j;
-                    if curidx > k
-                        break
+            
+            if nargin == 3
+                obj.EEGData.raw_electrodes(); % more detailed graph
+                for i = 0:1:floor(k/n)                
+                    % figure()
+                    for j = 1:n
+                        curidx = n * i + j;
+                        if curidx > k
+                            break
+                        end
+                        figure()
+                        % subplot(1, n, j)
+                        curfeature = C(curidx, :);
+                        first_window.plot_his_feature(curfeature(:))%, [0, 0.7]);%TODO remove limit
+                        title(sprintf('%d th component',curidx))
                     end
-                    subplot(1, n, j)
-                    curfeature = C(curidx, :);
-                    first_window.plot_his_feature(curfeature(:));
-                    title(sprintf('%d th compoenent',curidx))
+                end
+
+                for i = 0:1:floor(k/n) 
+                    % plot raw temporal data
+                    % figure()
+                    for j = 1:n
+                        curidx = n * i + j;
+                        if curidx > k
+                            break
+                        end
+                        windowidx = find(idx == curidx);
+                        type_windows = obj.data_windows(windowidx);
+                        first_window = type_windows(2);
+                        first_window.plot_raw_feature();
+                        title(sprintf('%d th compoenent',curidx));
+                    end
                 end
             end
-
-            for i = 0:1:floor(k/n) 
-                % plot raw temporal data
-                % figure()
-                for j = 1:n
-                    curidx = n * i + j;
-                    if curidx > k
-                        break
-                    end
-                    windowidx = find(idx == curidx);
-                    type_windows = obj.data_windows(windowidx);
-                    first_window = type_windows(2);
-                    first_window.plot_raw_feature();
-                    title(sprintf('%d th compoenent',curidx));
-                end
-            end
-
 
 
             % show original temporal feature(time series) corresponding to each feature, take the mean
 
         end
 
-        function plot_temporal_evolution(obj)
+        function y = plot_temporal_evolution(obj)
             y = [];
             for curwindow = obj.data_windows
                 y = [y, curwindow.get_functional()];
             end
+    
+
             figure()
             plot(obj.start_locs, y)
             xlabel('time')
             ylabel(curwindow.get_functional_label)
             title('temporal evolution')
+            for row = size(obj.EEGData.seizure_times, 1)
+                for marker = obj.EEGData.seizure_times(row, :)
+                    line([marker, marker], ylim, 'color','red')
+                end
+            end
 
         end
 

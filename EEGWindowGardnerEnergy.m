@@ -27,5 +27,16 @@ classdef EEGWindowGardnerEnergy < EEGWindowInterface
 
             cur_feature = [cl, e, te];
         end
+
+        function plot_feature(obj, feature, opt1)%
+            % opt1 is the intensity mapping [min, max], used for comparison
+            ah1 = axes;
+            imagesc(feature);
+            if nargin == 3
+                caxis(ah1,opt1)
+            end
+            colorbar;
+
+        end 
     end
 end
