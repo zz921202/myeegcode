@@ -184,6 +184,11 @@ classdef EEGDataInterface < handle
             %       pre-ictal and post-ictal should be explored for better representation
 
             % find out if it overlaps with ictal period
+            if obj.seizure_times == [0, 0] % no seizure has occured
+                color_encoding = 0
+                return
+            end
+
             scaling = 300; % TODO 300 how many seconds to reach 0.1 color encoding
             window_end = window_length + window_start;
             start_times = obj.seizure_times(:, 1);

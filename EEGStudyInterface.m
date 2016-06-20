@@ -1,6 +1,7 @@
 classdef EEGStudyInterface < handle
     % overall flow of one study
     % concrete class includes specific eegdata 
+    % 
     properties
         data_windows = [] % an array that saves all data windows
         EEGData % source data file, handles I/O
@@ -42,6 +43,7 @@ classdef EEGStudyInterface < handle
 
 
         end
+
 
         function set_window_params(obj, window_length, stride, window_generator)
             obj.window_length = window_length;
@@ -95,6 +97,14 @@ classdef EEGStudyInterface < handle
             obj.feature_matrix = feature_matrix';
             obj.color_codes = color_codes;
             obj.color_types = color_types;
+        end
+
+        %TODO for backward compatibility support
+        function check_color(obj)
+            if obj.EEGData.seizure_times == [0, 0]
+                obj.color_codes = zeros(size(obj.color_codes));
+                obj.color_types = zeros(size(obj.color_types));
+            end
         end
 
         %% Exploratory Analysis primarily Unsupervised Learning, NOW the exciting part
