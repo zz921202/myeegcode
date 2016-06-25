@@ -21,7 +21,7 @@ classdef EEGDataInterface < handle
     end
 
     methods
-    %% all load functionalities
+        %% all load functionalities
         function obj = EEGDataInterface()       
             % initialize an empty object, just set the dataset_name
             % initialize eeglab
@@ -141,9 +141,9 @@ classdef EEGDataInterface < handle
             ica_vec = obj.data(index, :);
         end
 
-        function description = to_str(obj)
+        function description = toString(obj)
             % TODO provide human readable concise descriptor
-            description = '';
+            description = obj.dataset_name;
         end
 
         %% easy plot to browse the data    
@@ -184,9 +184,8 @@ classdef EEGDataInterface < handle
             %       pre-ictal and post-ictal should be explored for better representation
 
             % find out if it overlaps with ictal period
-            if obj.seizure_times == [0, 0] % no seizure has occured
-                color_encoding = 0
-                return
+            if obj.seizure_times(2) == 0 % no seizure has occured
+                color_encoding = 0;
             end
 
             scaling = 300; % TODO 300 how many seconds to reach 0.1 color encoding

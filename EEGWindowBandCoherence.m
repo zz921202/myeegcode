@@ -16,7 +16,7 @@ classdef EEGWindowBandCoherence < EEGWindowInterface
             test_cond = @(freq) and(freq >= low_cutoff, freq < high_cutoff);
             indicator = arrayfun(test_cond, f);
 
-            cur_power = sum((cxy(indicator))) / (high_cutoff - low_cutoff);
+            cur_power = sum((cxy(indicator))) / sum(indicator);
         end
     end
     methods
@@ -39,6 +39,7 @@ classdef EEGWindowBandCoherence < EEGWindowInterface
                 end
                 feature(i, :)= curfeature;
             end
+
             feature = feature + feature' - diag(diag(feature));
             obj.feature = feature;
             obj.flattened_feature = feature(:);

@@ -79,4 +79,4 @@ cc.set_window_params(2, 2, 'EEGWindowBandCoherence')
 % matlabpool close 
 % % mit.plot_pca()
 % % mit.k_means(3, true)
-matlabpool close
+% matlabpool close

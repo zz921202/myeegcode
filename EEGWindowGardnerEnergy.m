@@ -38,5 +38,13 @@ classdef EEGWindowGardnerEnergy < EEGWindowInterface
             colorbar;
 
         end 
+
+        function y = get_functional(obj)
+            y = mean(obj.flattened_feature);
+        end
+
+        function mystr = get_functional_label(obj)
+            mystr = 'mean GardnerEnergy';
+        end
     end
 end

@@ -11,7 +11,6 @@ classdef EEGStudyInterface < handle
         num_windows
         window_generator = 'EEGWindowInterface'
         stride
-        toString
         color_codes % used to indicate the class that current window belongs to 
         S = []          % should consider
         V = []% used to store result from pca
@@ -19,6 +18,7 @@ classdef EEGStudyInterface < handle
         idx
         C
         pca_coordinates
+        
     end
 
     methods
@@ -75,7 +75,7 @@ classdef EEGStudyInterface < handle
 
             obj.num_windows = length(obj.start_locs);
             obj.gen_feature_matrix();
-            obj.toString = [class(obj) 'from 0 to ' num2str(obj.EEGData.total_length) ' with ' num2str(obj.num_windows) ' ' obj.window_generator ];
+            
 
         end
 
@@ -101,7 +101,9 @@ classdef EEGStudyInterface < handle
 
         %TODO for backward compatibility support
         function check_color(obj)
-            if obj.EEGData.seizure_times == [0, 0]
+            % disp('checking color ffff')
+            if obj.EEGData.seizure_times(2) == 0
+                % disp('checking color')
                 obj.color_codes = zeros(size(obj.color_codes));
                 obj.color_types = zeros(size(obj.color_types));
             end
@@ -177,7 +179,7 @@ classdef EEGStudyInterface < handle
             % function for normalize a vector 
             % porp the percentage of correct clustering
             data_mat = obj.feature_matrix;
-            % pool = parpool;                      % Invokes workers
+            % pool = parpool;                      % In cvokes workers
             % stream = RandStream('mlfg6331_64');  % Random number stream
             % options = statset('UseParallel',1,'UseSubstreams',1,...
             %                     'Streams',stream);
@@ -255,18 +257,30 @@ classdef EEGStudyInterface < handle
 
         end
 
-        function y = plot_temporal_evolution(obj)
-            y = [];
-            for curwindow = obj.data_windows
-                y = [y, curwindow.get_functional()];
+        function y = plot_temporal_evolution(obj, opt1)
+            % opt1 supports foreign vectors, say the classification result from svm etc
+            if nargin < 2
+                y = [];
+                for curwindow = obj.data_windows
+                    y = [y, curwindow.get_functional()];
+                    
+                end
+                my_ylabel = curwindow.get_functional_label;
+            else
+                if obj.num_windows ~= length(opt1);
+                    error('input feature vector are incompatible with current study')
+                end
+                y = opt1;
+                my_ylabel = 'score';
             end
-    
+
 
             figure()
+
             plot(obj.start_locs, y)
             xlabel('time')
-            ylabel(curwindow.get_functional_label)
-            title('temporal evolution')
+            ylabel(my_ylabel)
+            title(['temporal evolution' , obj.toString]);
             for row = size(obj.EEGData.seizure_times, 1)
                 for marker = obj.EEGData.seizure_times(row, :)
                     line([marker, marker], ylim, 'color','red')
@@ -275,7 +289,12 @@ classdef EEGStudyInterface < handle
 
         end
 
-        %% Quantitative Analysis primarily Supervised Learning, the even more exciting part
+        %% standard functionalities
+        function mystr = toString(obj)
+            mystr = [class(obj) ' '  num2str(obj.num_windows) ' of ' num2str(obj.window_length) ' sec ' obj.window_generator ...
+                              ' from ' obj.EEGData.toString];
+        end
+
 
         
     end

@@ -8,11 +8,11 @@ classdef SVM < SupervisedLearnerInterface
     methods
 
         % used as a demo to get an idea of basic performance
-        function [label, score] = train(obj, X, y, options_map)
+        function [labels, scores] = train(obj, X, y, options_map)
         end
 
         % use cross validation to search for optimal parameter model
-        function [label, score] = cvtrain(obj, X, y)
+        function [labels, scores] = cvtrain(obj, X, y)
             cdata = X; grp = y;
             % Train the classifier
             obj.model = fitcsvm(cdata,grp,'KernelFunction','rbf','ClassNames',unique(grp));
@@ -26,11 +26,14 @@ classdef SVM < SupervisedLearnerInterface
             [searchmin fval] = patternsearch(minfn, randn(2,1), [], [], [], [], [-5; -5], [5, 5], [], opts)
             z = exp(searchmin);
             obj.model = fitcsvm(cdata, grp, 'KernelFunction','rbf', 'KernelScale',z(1),'BoxConstraint',z(2))
+            [labels, scores] = predict(obj.model,X);
+            scores = scores(:, 2);
         end
 
         % infer label for new data
-        function [label, scores] = infer(obj, Xnew)
-            [label, scores] = predict(obj.model,Xnew);
+        function [labels, scores] = infer(obj, Xnew)
+            [labels, scores] = predict(obj.model,Xnew);
+            scores = scores(:, 2);
         end
 
     end
