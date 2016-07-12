@@ -57,13 +57,14 @@ classdef EEGStudyInterface < handle
             %opt1 for parallel programming 
 
             % generate window location
-            obj.start_locs = 0: obj.stride : (obj.EEGData.total_length - obj.window_length);
+            obj.start_locs = 0: obj.stride : (obj.EEGData.total_length - obj.window_length)
             %obj.start_locs = [ 2000,  2990, 3000, 3040, 3100]; % I changed this because compressive sensing is just too slow
             counter = 0
-
+            % obj.start_locs
+            % obj.EEGData.total_length
             for start_loc = obj.start_locs
                 counter = counter + 1;
-                if mod(counter, 5) == 0
+                if mod(counter, 500) == 0
                     disp(['......window : ' num2str(counter) '.........'])
                 end
 

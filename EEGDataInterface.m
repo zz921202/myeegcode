@@ -88,7 +88,8 @@ classdef EEGDataInterface < handle
 
         function obj = load_raw(obj, readings_file)
             channel_file = [pwd '/' 'emotive_channel_info.ced'];
-            obj.curEEG = LoadEEGData(readings_file, obj.dataset_name, channel_file, obj.data_path);
+            obj.curEEG = LoadEEGData(readings_file, obj.dataset_name, channel_file, obj.data_path,'no fancy rejection');
+            
             obj = obj.extract_EEG_data();
         end
 
@@ -106,15 +107,18 @@ classdef EEGDataInterface < handle
         function obj = extract_EEG_data(obj)
             % extract values from EEG object for easier access
             % can detect if data has been epoched & perform adaptation to fit the current module
-
-            obj.ica_weights = obj.curEEG.icaweights * obj.curEEG.icasphere;
-            obj.ica_inv = obj.curEEG.icawinv;
             obj.raw_data = obj.curEEG.data;
             if length(size(obj.curEEG.data)) == 3
                 [d1, d2, d3] = size(obj.curEEG.data);
                 obj.raw_data = reshape(obj.curEEG.data, [d1, d2 * d3]);
             end
-            obj.ica_data = obj.ica_weights * obj.raw_data;
+
+            if ~isempty(obj.curEEG.icaweights)
+                obj.ica_weights = obj.curEEG.icaweights * obj.curEEG.icasphere;
+                obj.ica_inv = obj.curEEG.icawinv;
+                
+                obj.ica_data = obj.ica_weights * obj.raw_data;
+            end
             obj.chanlocs = obj.curEEG.chanlocs;
             tot_pnts = size(obj.raw_data);
             obj.total_length = tot_pnts(2) / obj.sampling_rate;

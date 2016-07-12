@@ -1,4 +1,4 @@
-function[EEG] = LoadEEGData(readings_file, dataset_name, channel_file, out_put_dir)
+function[EEG] = LoadEEGData(readings_file, dataset_name, channel_file, out_put_dir, quick_import)
     
     filename = readings_file;
     datasetname = dataset_name;
@@ -19,25 +19,25 @@ function[EEG] = LoadEEGData(readings_file, dataset_name, channel_file, out_put_d
     EEG = eeg_checkset( EEG );
     EEG = pop_saveset( EEG, 'filename', strcat(EEG.setname, '.set'),'filepath',file_path);
     
-
+    if nargin == 4
     % Filter data to include only above lowest frequency cutoff, and run initial ICA
-    EEG.setname = strcat(datasetname, '_filtered');
-    EEG = pop_eegfiltnew(EEG, band_cutoffs(1), band_cutoffs(length(band_cutoffs)), 424, 0, [], 0);
-    EEG = eeg_checkset( EEG ); % i applied upper limit to band curtoffs
-    EEG = pop_runica(EEG, 'extended',1,'interupt','on');
-    EEG = eeg_checkset( EEG );
-    EEG = pop_saveset( EEG, 'filename',strcat(EEG.setname, '.set'),'filepath',file_path);
-    EEG = eeg_checkset( EEG );
+        EEG.setname = strcat(datasetname, '_filtered');
+        EEG = pop_eegfiltnew(EEG, band_cutoffs(1), band_cutoffs(length(band_cutoffs)), 424, 0, [], 0);
+        EEG = eeg_checkset( EEG ); % i applied upper limit to band curtoffs
+        EEG = pop_runica(EEG, 'extended',1,'interupt','on');
+        EEG = eeg_checkset( EEG );
+        EEG = pop_saveset( EEG, 'filename',strcat(EEG.setname, '.set'),'filepath',file_path);
+        EEG = eeg_checkset( EEG );
 
-    % Autoreject regions of data and run ICA again
-    EEG.setname=strcat(datasetname, '_rejected');
-    EEG = pop_rejcont(EEG, 'elecrange',[1:14] ,'freqlimit',[20 40] ,'threshold',10,'epochlength',0.5,'contiguous',4,'addlength',0.25,'taper','none');
-    EEG = eeg_checkset( EEG );
-    EEG = pop_runica(EEG, 'extended',1,'interupt','on');
-    EEG = eeg_checkset( EEG );
-    EEG = pop_saveset( EEG, 'filename', strcat(EEG.setname, '.set'),'filepath',file_path);
-    EEG = eeg_checkset( EEG );
-
+        % Autoreject regions of data and run ICA again
+        EEG.setname=strcat(datasetname, '_rejected');
+        EEG = pop_rejcont(EEG, 'elecrange',[1:14] ,'freqlimit',[20 40] ,'threshold',10,'epochlength',0.5,'contiguous',4,'addlength',0.25,'taper','none');
+        EEG = eeg_checkset( EEG );
+        EEG = pop_runica(EEG, 'extended',1,'interupt','on');
+        EEG = eeg_checkset( EEG );
+        EEG = pop_saveset( EEG, 'filename', strcat(EEG.setname, '.set'),'filepath',file_path);
+        EEG = eeg_checkset( EEG );
+    end
 %     % Plot band frequencies
 %     for i = 1:length(band_cutoffs)-1
 %         DispBand(EEG, band_cutoffs(i), band_cutoffs(i + 1))

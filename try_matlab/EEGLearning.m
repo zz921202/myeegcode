@@ -20,15 +20,17 @@ classdef EEGLearning < handle
             % EEGStudys should have already imported data and generated data windows
             % get and plot pca coordinates immedaitely after loading
             obj.EEGStudys = EEGStudys;
-            obj.pca()
+            obj.pca(1:length(EEGStudys), 0.1);
         end
 
         
 
-        function [X, color_types, endpoints, data_windows] = get_feature_and_label(obj, opt1) % opt1 selects which study to use
+        function [X, color_types, endpoints, data_windows, color_codes] = get_feature_and_label(obj, datasets, type_to_use) % opt1 selects which study to use
             % endpoints is used to separate the data windows to their corresponding EEGStudy instance so that we could 
             % delegate plot temporal evolution back to the original class
             % X each row represents an data point
+
+            % type_to_use to extract a subset of data according to color designation
             if obj.debugging
                 [X, color_types] = obj.generate_test_data();
                 endpoints = [];
@@ -37,15 +39,16 @@ classdef EEGLearning < handle
 
             % load EEG study datasets
             if nargin < 2
-                opt1 = 1: length(obj.EEGStudys);
+                datasets = 1: length(obj.EEGStudys);
             end
-            endpoints = zeros(1, length(opt1));
+            endpoints = zeros(1, length(datasets));
             cum_windows_counter = 0;
             X = [];
             color_types = [];
             data_windows = [];
-            for ind = 1: length(opt1)
-                data_ind = opt1(ind);
+            color_codes = [];
+            for ind = 1: length(datasets)
+                data_ind = datasets(ind);
                 curEEGStudy = obj.EEGStudys(data_ind);
                 curEEGStudy.check_color();
 
@@ -53,13 +56,27 @@ classdef EEGLearning < handle
 
                 X = [X; curEEGStudy.feature_matrix];
                 color_types = [color_types; curEEGStudy.color_types(:)];
-
+                color_codes = [color_codes; curEEGStudy.color_codes(:)];
 
                 cum_windows_counter = cum_windows_counter + length(curEEGStudy.data_windows);
 
                 endpoints(ind) = cum_windows_counter;
 
             end
+
+            if  nargin > 2
+
+                indicator = zeros(size(color_types));
+                for curtype = type_to_use
+                    indicator = indicator + (color_types == curtype);
+                end
+                indicator = logical(indicator);
+                X = X(indicator, :);
+                data_windows = data_windows(indicator);
+                color_types = color_types(indicator);
+                color_codes = color_codes(indicator);
+            end
+
 
         end
 
@@ -77,18 +94,28 @@ classdef EEGLearning < handle
         end
 
 
-        function pca(obj, datasets)
+        function pca(obj, datasets, sample_proportion)
+
             disp('..........starting pca...........');
             if nargin < 2
-                [data_mat, color_types, endpoints] = obj.get_feature_and_label();
+                [data_mat, color_types, endpoints, ~, color_codes] = obj.get_feature_and_label();
             else
-                [data_mat, color_types, endpoints] = obj.get_feature_and_label(datasets);
-            end
-            
+                %TODO remove 1:3
+                [data_mat, color_types, endpoints, ~, color_codes] = obj.get_feature_and_label(datasets);
 
-            [~,~,V] = svd(data_mat);
+            end
+
+
+
+            if nargin < 3
+                sample_proportion = 0.1;
+            end
+            k = floor(length(data_mat) * sample_proportion);
+            sampled_data_mat = datasample(data_mat,k ,1);
+
+            [~,~,V] = svd(sampled_data_mat);
             
-            figure % plot 2d projection
+             % plot 2d projection
             obj.p2 = V(:, 1:2);
             pca_coordinates = data_mat * obj.p2;
             if unique(color_types) == 0 % color according to the dataset in chronological order
@@ -101,7 +128,35 @@ classdef EEGLearning < handle
             end
             figure;
             scatter(pca_coordinates(:,1), pca_coordinates(:,2), 15, color_types, 'filled');
+            title('pca 2d plot of color types')
+            scatter(pca_coordinates(:,1), pca_coordinates(:,2), 15, color_codes, 'filled');
+            title('pca 2d continuous color encoding')
             colorbar
+
+            figure
+            subplot(311)
+            title('pca 1 evolution');
+            color_line(1: length(color_codes),pca_coordinates(:,1)', color_types')
+            for endpoint = endpoints
+                line([endpoint, endpoint], ylim, 'color', 'blue');
+            end
+
+            subplot(312)
+            title('pca 2 evolution');
+            color_line(1: length(color_codes),pca_coordinates(:,2)', color_types')
+            for endpoint = endpoints
+                line([endpoint, endpoint], ylim, 'color', 'blue');
+            end
+
+
+            subplot(313)
+            title('pca 3 evolution');
+            pca_coordinates = data_mat * V(:, 1:3);
+            color_line(1: length(color_codes),pca_coordinates(:,3)', color_types')
+            for endpoint = endpoints
+                line([endpoint, endpoint], ylim, 'color', 'blue');
+            end
+
             if size(data_mat, 2) > 2
                 pca_coordinates = data_mat * V(:, 1:3);
                 figure;

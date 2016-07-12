@@ -27,7 +27,7 @@ classdef EEGDataMIT < EEGDataInterface
             load([obj.data_dir '/channel_reverse_info.mat']);
             channel_m = channel_inv * record;
             % channel_m = channel_m(:, 1:256);
-            obj.curEEG = LoadEEGDataMatlab(channel_m, obj.dataset_name, channel_file, 256, 'CHB_MIT', 'MIT');
+            obj.curEEG = LoadEEGDataMatlab(channel_m, obj.dataset_name, channel_file, 256, 'CHB_MIT_01', 'MIT');
             obj = obj.extract_EEG_data();
         end
 

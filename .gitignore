@@ -10,3 +10,5 @@ html/
 tmp/
 try_matlab/html/
 try_matlab/vid.mat
+try_matlab/chb01_band_amp
+try_matlab/processed_data

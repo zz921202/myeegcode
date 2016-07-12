@@ -22,7 +22,7 @@ classdef SVM < SupervisedLearnerInterface
             minfn = @(z)kfoldLoss(fitcsvm(cdata,grp,'CVPartition',c,...
                 'KernelFunction','rbf','BoxConstraint',exp(z(2)),...
                 'KernelScale',exp(z(1))));
-            opts = optimset('Tolx', 5e-4, 'TolFun', 5e-4, 'Display', 'iter');
+            opts = optimset('Tolx', 5e-2, 'TolFun', 5e-2, 'Display', 'iter');
             [searchmin fval] = patternsearch(minfn, randn(2,1), [], [], [], [], [-5; -5], [5, 5], [], opts)
             z = exp(searchmin);
             obj.model = fitcsvm(cdata, grp, 'KernelFunction','rbf', 'KernelScale',z(1),'BoxConstraint',z(2))
